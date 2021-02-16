@@ -4,21 +4,22 @@
 
 ## クレジットカード・チャージバック - トランザクションのリスク評価
 
-Every dispute has a possible risk to be incorrect or to be a fraud. Based on existing data, it is possible to determine the set that determines whether the dispute can be qualified for automated chargeback.
+すべてのチャージバック申請は、不正利用であったり、詐欺であったりする可能性があるリスクを持っています。既存のデータに基づいて、そのチャージバックが自動承認の対象となるかどうかを判断するセットを設計することができます。
 
-For Pecunia Corp., depending on the customer status and value disputed, the risks can be higher or lower. The bank handled the following rules to you:
+Pecunia Corp. の場合は、顧客のステータスとチャージバック申請になっている金額に応じて、リスクの見積もりを実施しており、以下のようなルールでお客様に対応しています。
 
-- For a **standard** customer, and a dispute amount **between 0 and 100**, the risk is **low**.;
-- For a **standard** customer, and a dispute amount **between 100 and 500**, the risk is **medium**;
-- For a **standard** customer, and a dispute amount **above 500**, the risk is **high**.
-- For a **silver** customer, and a dispute amount **below 250**, the risk is **low**.
-- For a **silver** customer, and a dispute amount **between 250 and 500**, the risk is **medium**.
-- For a **silver** customer, and a dispute amount **above 500**, the risk is **high**.
-- For a **gold** customer, and a dispute amount **below 500**, the risk is **low**.
-- For a **gold** customer, and a dispute amount **over 500**, the risk is **medium**.
+- 顧客ステータスが **Standard** で、チャージバック申請金額が **100 未満** の場合、リスクは **low**
+- 顧客ステータスが **Standard** で、チャージバック申請金額が **100 以上、 500 未満** の場合、リスクは **medium**
+- 顧客ステータスが **Standard** で、チャージバック申請金額が **500 以上** の場合、リスクは **high**
+- 顧客ステータスが **Silver** で、チャージバック申請金額が **250 未満** の場合、リスクは **low**
+- 顧客ステータスが **Silver** で、チャージバック申請金額が **250 以上、 500 未満** の場合、リスクは **medium**
+- 顧客ステータスが **Silver** で、チャージバック申請金額が **500 以上** の場合、リスクは **high**
+- 顧客ステータスが **Gold** で、チャージバック申請金額が **500 未満** の場合、リスクは **low**
+- 顧客ステータスが **Gold** で、チャージバック申請金額が **500 以上** の場合、リスクは **medium**
 
-In your implementation, the business users must have the ability to change criteria anytime if needed, and apply the changes according to the release processes of Pecunia Corp.
+業務ユーザーは必要に応じて、いつでも基準を変更することができ、Pecunia Corp. のリリースプロセスに従って変更を適用する必要があります。
 
-You should also consider that the user can change the criteria without technical assistance. Pecunia Corp., business users cannot code, therefore, your solution should allow them to update the rules using standard spreadsheet-like decision tables or quasi natural language.
+また、技術的な支援なしに業務ユーザーが基準を変更できることも考慮する必要があります。
+Pecunia Corp. の業務ユーザーはコーディングができないため、あなたのソリューションでは、標準的なスプレッドシートのような意思決定表や擬似自然言語を使用してルールを更新できるようにする必要があります。
 
-Make sure you also deliver automated tests for your rules.
+ルールの自動テストについても実施してください。
