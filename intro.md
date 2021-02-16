@@ -11,4 +11,4 @@
 - プロジェクトのデプロイについて
 - REST API を介してルールを提供し、利用する方法について
 
-より詳細な情報については、[製品ドキュメント](http://docs.redhat.com)を参照してください。
+より詳細な情報については、[製品ドキュメント](https://access.redhat.com/documentation/ja-jp/red_hat_decision_manager/){:target="_blank"} を参照してください。
