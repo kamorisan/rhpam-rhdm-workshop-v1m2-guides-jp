@@ -3,18 +3,18 @@ config:
 
 modules:
   intro:
-    name: Introduction
+    name: イントロダクション
   use-case-overview:
-    name: Use Case Introduction
+    name: ユースケースの紹介
   business-model:
     name: Business Object Model
   decisions-authoring:
-    name: Authoring Business Rules and Decisions
+    name: ビジネスルールとデシジョンの設計
   decisions-service:
-    name: Decisions as a Service
+    name: デシジョンサービス
   test-decision-service:
-    name: Testing a Decision Service
+    name: デシジョンサービスのテスト
   execute-decision-service:
-    name: Executing a Decision Service
+    name: デシジョンサービスの実行
   finish:
-    name: Conclusion
+    name: 終わりに

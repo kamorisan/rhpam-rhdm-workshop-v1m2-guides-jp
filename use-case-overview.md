@@ -1,8 +1,8 @@
-# 2. Use Case Overview
+# 2. ユースケースの概要
 
-You are a business automation specialist consultant who was hired by a credit card issuer company, Pecunia Corp. Your task now is to automate the decisions and rules of a _Credit Card Dispute_ process.
+あなたは、クレジットカード発行会社である Pecunia Corp. に採用された、業務自動化コンサルタントです。あなたの今のミッションは、クレジットカードの_チャージバック_プロセスの意思決定とそのルールを自動化することです。
 
-## Credit Card Dispute - Transaction Risk
+## クレジットカード・チャージバック - トランザクションのリスク評価
 
 Every dispute has a possible risk to be incorrect or to be a fraud. Based on existing data, it is possible to determine the set that determines whether the dispute can be qualified for automated chargeback.
 

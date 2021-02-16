@@ -6,7 +6,7 @@
 
 - Business Central でプロジェクトをインポートする方法について
 - Business Object Models について
-- ルール: DRL(Drools Rule Language), DMN(Decision Model and Notation), 意思決定表
+- ルール: DRL(Drools Rule Language)、 DMN(Decision Model and Notation)、 意思決定表
 - ルールのテストについて
 - プロジェクトのデプロイについて
 - REST API を介してルールを提供し、利用する方法について
