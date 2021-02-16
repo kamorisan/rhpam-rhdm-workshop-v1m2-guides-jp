@@ -1,14 +1,14 @@
-# 1. Introduction
+# 1. イントロダクション
 
-In this scenario you will be introduced to decisions and rules, why these concepts and methodologies are important, and what the industry standards are in this area.
+このシナリオでは、意思決定とルール、なぜこれらの概念や方法論が重要なのか、この分野の業界標準は何かについて紹介します。
 
-**Topics covered in this module:**
+**このモジュールに含まれるトピック:**
 
-- Importing projects in business central;
-- Business Object Models;
-- Rules: DRL Language, DMN Notation, Decision Tables;
-- Testing rules;
-- Deploying your first project;
-- Exposing and consuming rules via REST API;
+- Business Central でプロジェクトをインポートする方法について
+- Business Object Models について
+- ルール: DRL(Drools Rule Language), DMN(Decision Model and Notation), 意思決定表
+- ルールのテストについて
+- プロジェクトのデプロイについて
+- REST API を介してルールを提供し、利用する方法について
 
-More information can be found at in our [documentation](http://docs.redhat.com).
+より詳細な情報については、[製品ドキュメント](http://docs.redhat.com)を参照してください。
