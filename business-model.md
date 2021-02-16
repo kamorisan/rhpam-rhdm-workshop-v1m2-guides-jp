@@ -1,22 +1,25 @@
 # 3. Business Object Model
 
-In this section you will learn
+このセクションでは、以下のことを学習します。
 
-1. What are Business Object Models;
-2. How to create Business Object Models inside the Business Central;
-3. How to import a project into your space.
+1. Business Object Models とは？
+2. Business Central で、Business Object Models を作成する方法
+3. プロジェクトをスペースにインポートする方法
 
-## The Business Domain Context
+## ビジネスドメインのコンテキスト
 
-You, as business domain expert, need to define what the domain model is for the business capability you're trying to automate. Eric Evans coined the term [_Domain Driven Design_](https://en.wikipedia.org/wiki/Domain-driven_design) that holds 3 main guiding principles:
+ビジネスドメインのエキスパートであるあなたは、自動化しようとしている業務のドメインモデルが何であるかを定義する必要があります。
+Eric Evans氏によって提唱された[_Domain Driven Design_](https://en.wikipedia.org/wiki/Domain-driven_design){:target="_blank"}には3つの主要な指針があります。
 
-- Focus on the core domain.
-- Explore models in a creative collaboration of domain practitioners and software practitioners.
-- Speak a ubiquitous language within an explicitly bounded context.
+- コアドメインに焦点を当てる。
+- ドメインエキスパートと開発者の創造的なコラボレーションの中でモデルを探求する。
+- 明示的に境界づけられたコンテキストの中でユビキタス言語を話す。
 
-So based on this development practice, the first and very important task when automating a core business capability is to create a definition of the business entities within the context of the Credit Card Dispute domain. In our case, our first entity is the `Credit Card Holder`. The definition in the context of our use case maybe totally different from the definition inside other organizations. But within our use case, it will be common definition among the team of business and technology experts, it will be part of our _ubiquitous language_.
+この演習における、コアドメインの業務を自動化する際の最初の非常に重要なタスクは、チャージバックのドメインのコンテキスト内でビジネスエンティティの定義を作成することです。
+このケースでは、最初のエンティティは `Credit Card Holder` です。私たちのユースケースのコンテキストでの定義は、他の組織内での定義とは全く異なるかもしれません。
+しかし、私たちのユースケース内では、それはドメインエキスパートと開発者のチームの間で共通の定義となり、私たちの _ユビキタス言語_ の一部となるでしょう。
 
-## Creating the Card Holder entity
+## Credit Card Holder エンティティの作成
 
 1. To access **Business Central**, go to your  [Openshift Console]({{ OPENSHIFT_CONSOLE_URL }}){:target="_blank"} tab. Jump to step 2 if you're already logged in. If you're not yet logged in, or have been logged out, log in using these credentials:
 
