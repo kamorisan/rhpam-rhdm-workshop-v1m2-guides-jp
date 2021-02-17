@@ -120,11 +120,11 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
   2. ウィンドウが開いたら、 _リポジトリー URL_ に [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) と入力し、 `インポート` をクリックします。
    
-  3. 次に、_プロジェクトのインポート_ 画面で、 _ccd-project_ を選択し, `Ok` をクリックします。
-   
+  3. 次に、_プロジェクトのインポート_ 画面で、 _ccd-project_ を選択し, `OK` をクリックします。
+
     ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="800px"}
 
-  4. インポートしたプロジェクトのデータオブジェクトの内容について、確認をして下さい、
+  4. インポートしたプロジェクトのデータオブジェクトの内容について、確認をして下さい。
 
 おめでとうございます！
 このセクションでは、データオブジェクトの定義方法を確認しました。
