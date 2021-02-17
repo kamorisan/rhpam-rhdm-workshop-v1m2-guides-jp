@@ -49,12 +49,12 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
     ![Business Central Asset CCD Project]({% image_path add-new-case-project.png %}){:width="800px"}
 
-8.  When the _Add Project_ wizard opens up, type in
+8.  プロジェクトの追加のウィザードが開いたら、次のように入力します。
 
-      *  `ccd-project` as the name of the project, and
-      * `Credit card dispute business automation project` as the description of your project.
+      * プロジェクト名（Name）: `ccd-project`
+      * 説明: `Credit card dispute business automation project`
 
-    This project is your business boundary that encapsulates your business capability. Once the creation of your project is complete, you will see it in your space:
+    プロジェクトの作成が完了すると、MySpaceにプロジェクトが表示されます。
 
     ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="800px"}
 
