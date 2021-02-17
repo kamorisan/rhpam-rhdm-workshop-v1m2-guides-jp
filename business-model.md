@@ -58,26 +58,27 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
     ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="800px"}
 
-9.  Select the `ccd-project`. You should see the following page with the project content.
+9.  `ccd-project` を選択します。プロジェクトの内容が記載された以下のページが表示されるはずです。
 
     ![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="800px"}
 
-10. Notice there's a blue button called `Add Asset`.  Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.An asset is a business resource of the project like Rules, Processes, Decision Tables, Data Objects, Data Forms, etc._
+10. `アセットの追加` という青いボタンがあることに注目してください。アセットとは、_ルール、プロセス、意思決定表、データオブジェクト、データフォームなど_ のプロジェクトのビジネスリソースのことです。
 
     ![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="800px"}
 
 11. Select the wizard for _Data Object_ from the catalog to create your business object model for the _Credit Card Holder_ enter the following and Click OK:
+12. カタログから _データオブジェクト_ のウィザードを選択し、_CreditCardHolder_ のビジネスオブジェクトモデルを作成します。
 
-    * type `CreditCardHolder`{{copy}} as the name of the object sandbox
-    * select `com.myspace.ccd_project` as the Package.
+    * データオブジェクト: `CreditCardHolder`{{copy}}
+    * パッケージ: `com.myspace.ccd_project` を、リストから選択
 
     ![Business Central CCD Object]({% image_path business-central-CCD-object-new.png %}){:width="800px"}
 
-12. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder data object.
+13. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder data object.
 
     ![Business Central CCD Object New Empty]({% image_path business-central-CCD-object-new-empty.png %}){:width="800px"}
 
-13. In the _New Field_ window, enter the following values and click on _Create_:
+14. In the _New Field_ window, enter the following values and click on _Create_:
 
     - Id: `age`
     - Label: `Age`
