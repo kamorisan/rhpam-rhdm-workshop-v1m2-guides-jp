@@ -3,20 +3,22 @@
 
 このセクションでは、以下のことを学習します。
 
-1. Business Object Model を使って、意思決定やポリシーを自動化する方法
+1. Business Object Model を使って、意思決定や業務方針を自動化する方法
 2. 様々な種類のオーサリングツールの使用方法
 3. 自動化された判断やルールの使用方法
 
 ## 概要
 
-Solving a credit card dispute depends on several variables, like:
+チャージバック申請の承認は、いくつかの情報を元に判断をする必要があります。
 
-- The type of customer
-- The amount of the dispute
+- 顧客の情報
+- チャージバック申請の金額
 
 The knowledge of how to apply these rules and decisions is tacit and lives only in the head of other domain experts. In order to automate the process, you will first have to express the business policies that determine how a dispute is handled in the form of rules.
+これらのルールや判断をどのように適用するかという知識は、暗黙のうちに他のドメインエキスパートの頭の中に存在するものになってしまっています。
+プロセスを自動化するためには、まず、チャージバック申請の処理方法を決定する業務知識をルールという形で表現する必要があります。
 
-For this particular case, 2 sets of rules are defined for different stages on the process:
+このワークショップのケースでは、プロセス上の異なるステージに対して2つのルールが定義されています。
 
 ## Calculating the Risk
 
