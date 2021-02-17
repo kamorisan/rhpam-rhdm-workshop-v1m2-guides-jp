@@ -49,7 +49,7 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
     ![Business Central Asset CCD Project]({% image_path add-new-case-project.png %}){:width="800px"}
 
-8.  プロジェクトの追加のウィザードが開いたら、次のように入力します。
+8.  プロジェクトの追加のウィンドウが開いたら、次のように入力します。
 
       * プロジェクト名（Name）: `ccd-project`
       * 説明: `Credit card dispute business automation project`
@@ -62,59 +62,69 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
     ![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="800px"}
 
-10. `アセットの追加` という青いボタンがあることに注目してください。アセットとは、_ルール、プロセス、意思決定表、データオブジェクト、データフォームなど_ のプロジェクトのビジネスリソースのことです。
+10. `アセットの追加` という青いボタンをクリックして下さい。アセットとは、_ルール、プロセス、意思決定表、データオブジェクト、データフォームなど_ のプロジェクトのビジネスリソースのことです。
 
     ![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="800px"}
 
-11. Select the wizard for _Data Object_ from the catalog to create your business object model for the _Credit Card Holder_ enter the following and Click OK:
-12. カタログから _データオブジェクト_ のウィザードを選択し、_CreditCardHolder_ のビジネスオブジェクトモデルを作成します。
+11. カタログから _データオブジェクト_ のウィザードを選択し、_CreditCardHolder_ のビジネスオブジェクトモデルを作成します。
 
     * データオブジェクト: `CreditCardHolder`{{copy}}
     * パッケージ: `com.myspace.ccd_project` を、リストから選択
 
     ![Business Central CCD Object]({% image_path business-central-CCD-object-new.png %}){:width="800px"}
 
-13. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder data object.
+12. 新しく作成されたオブジェクトにはプロパティがありませんので、`+フィールドを追加` ボタンをクリックして、CreditCardHolderデータオブジェクトにプロパティを追加します。
 
     ![Business Central CCD Object New Empty]({% image_path business-central-CCD-object-new-empty.png %}){:width="800px"}
 
-14. In the _New Field_ window, enter the following values and click on _Create_:
+13. _新規フィールド_ ウィンドウで、以下の値を入力し、_作成_ をクリックします。
 
-    - Id: `age`
-    - Label: `Age`
-    - Type: `Integer`
+    - ID: `age`
+    - ラベル: `Age`
+    - タイプ: `Integer`
 
     ![Business Central CCD Object New Properties]({% image_path business-central-CCD-object-new-properties.png %}){:width="800px"}
 
-The first step to automate a process or decision is to define and specify the Business Object Model. In this exercise you've created the Entity `CreditCardHolder` and defined it's `age` field. These entities will be used to store the information that you need to make decisions and drive process execution.
+プロセスや意思決定を自動化するための最初のステップは、Business Object Model を定義して指定することです。
+この演習では、エンティティ `CreditCardHolder` を作成し、その `age` フィールドを定義しました。
+これらのエンティティは、意思決定やプロセスの実行に必要な情報を格納するために使用されます。
 
-## Managing projects in Business Central
+## Business Central でのプロジェクト管理
 
-We learned how easy it is to create a new project and new data objects. Let's now import an existing project with more Business Object Models.
+新しいプロジェクトと新しいデータオブジェクトを作成することがいかに簡単かを学びました。
+それでは、より多くのビジネスオブジェクトモデルが定義されている、既存のプロジェクトをインポートしてみましょう。
 
-In order to do this, let's delete the `ccd-project` project and learn how to import an existing project from a git repository.
+そのためには、`ccd-project` プロジェクトを一旦削除して git リポジトリから既存のプロジェクトをインポートする方法を学びましょう。
 
-### Deleting the ccd-project project
+### ccd-project プロジェクトを削除
 
-  1. Delete the current project
-  2. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
+  1. 現在のプロジェクトを削除します。
+   
+  2. 画面上部のメインメニューの下にあるリストから _ccd-project_ をクリックすると、プロジェクトのホームページに戻ります。
+
     ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="800px"}
 
-  3. Delete the project by clicking the hamburger menu & selecting _Delete Project_
+  3. 右上にある3点記号をクリックして、_プロジェクトの削除_ を選択します。
+
     ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="800px"}
 
-  4. Type in _ccd-project_ and click `Delete Project`
-  5. If asked you can `Discard unsaved changes and proceed`.
+  4. _ccd-project_ と入力し、`プロジェクトの削除` をクリックします。
+   
+  5. もし削除する際に確認の画面が表示された場合は、 `保存されていない変更を破棄して続行する` を選択します。
 
-### Importing a project from external git repository
+### 外部の git リポジトリからプロジェクトをインポートする
 
-Let's import the project with all the Data Objects relative to the Domain Model:
+ドメインモデルに関連するすべてのデータオブジェクトを含むプロジェクトをインポートしてみましょう。
 
-  1. Click the `Import Project` button;
-  2. On the pop-up, enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) as the _Repository URL_ and click `Import`
-  3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
+  1. `プロジェクトのインポート` をクリックします。
+
+  2. ウィンドウが開いたら、 _リポジトリー URL_ に [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) と入力し、 `インポート` をクリックします。
+   
+  3. 次に、_プロジェクトのインポート_ 画面で、 _ccd-project_ を選択し, `Ok` をクリックします。
+   
     ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="800px"}
 
-  4. Examine the other newly-imported entities
+  4. インポートしたプロジェクトのデータオブジェクトの内容について、確認をして下さい、
 
-Congratulations, now you that we've seen how to define Data Objects, we can now start working with the automation of our business rules and decisions!
+おめでとうございます！
+データオブジェクトの定義方法を見てきましたが、これでビジネスルールと意思決定の自動化に取り組むことができるようになりました！
