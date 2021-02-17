@@ -28,7 +28,7 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
     ![OpenShift Console]({% image_path openshift-console.png %}){:width="800px"}
 
-2. Make sure you are on the `Developer` perspective and that you have the `rhpam-userX` project selected. On the left menu, select the `Topology` option.
+2. `Developer` パースペクティブを選択し、左側のメニューから `Topology` を選択します。`rhpam-userX` プロジェクトが選択されていることを確認してください。
 
 3. You will see listed the 3 components: `rhpam7-rhpamcentr`, the `rhpam7-kieserver` and `react-web-app`. From this page, you can already find a link to open Business Central. Click on it to open Business Central in another tab.
 
