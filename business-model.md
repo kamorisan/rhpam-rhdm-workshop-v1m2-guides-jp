@@ -30,11 +30,14 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
 2. `Developer` パースペクティブを選択し、左側のメニューから `Topology` を選択します。`rhpam-userX` プロジェクトが選択されていることを確認してください。
 
-3. You will see listed the 3 components: `rhpam7-rhpamcentr`, the `rhpam7-kieserver` and `react-web-app`. From this page, you can already find a link to open Business Central. Click on it to open Business Central in another tab.
+3. `rhpam7-rhpamcentr`、`rhpam7-kieserver`、`react-web-app` の3つのコンポーネントが表示されています。このページの `rhpam7-rhpamcentr` に、Business Centralにアクセスするためのリンクが表示されています。これをクリックすると、別のタブでBusiness Centralを開くことができます。
 
     ![PAM Project]({% image_path topology-details.png %}){:width="800px"}
 
-4. Login to Business Central with the credentials u:`pamAdmin`, p:`redhatpam1!`
+4. Business Central へのログインは、以下の認証情報を使用してください。
+
+    - user: `pamAdmin`{{copy}}
+    - password: `redhatpam1!`{{copy}}
 
     ![Business Central Console]({% image_path business-central-console.png %}){:width="800px"}
 
