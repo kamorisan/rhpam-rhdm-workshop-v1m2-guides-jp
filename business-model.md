@@ -42,14 +42,15 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
     ![Business Central Console]({% image_path business-central-console.png %}){:width="800px"}
 
 5. Select _Design_ from the main menu. You will be redirected to your working space. You will see a list of _Spaces_, with a single space named _MySpace_.
+6. メインメニューから _設計_ を選択します。ワークスペースにリダイレクトされます。スペースのリストが表示され、MySpaceという名前の1つのスペースが表示されます。
 
-6. Click on _MySpace_. This is the sandbox in which you'll define your projects, and within those projects, your projects assets.
+7. Click on _MySpace_. This is the sandbox in which you'll define your projects, and within those projects, your projects assets.
 
-7. Since this project is going to be used to deliver a case management implementation, we need to add a new `Case Project`. In order to do so, click on the arrow right next to the _Add Project_ button and select the option `Case Project`.
+8. Since this project is going to be used to deliver a case management implementation, we need to add a new `Case Project`. In order to do so, click on the arrow right next to the _Add Project_ button and select the option `Case Project`.
 
     ![Business Central Asset CCD Project]({% image_path add-new-case-project.png %}){:width="800px"}
 
-8. When the _Add Project_ wizard opens up, type in
+9. When the _Add Project_ wizard opens up, type in
 
       *  `ccd-project` as the name of the project, and
       * `Credit card dispute business automation project` as the description of your project.
@@ -58,26 +59,26 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
     ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="800px"}
 
-9.  Select the `ccd-project`. You should see the following page with the project content.
+10. Select the `ccd-project`. You should see the following page with the project content.
 
     ![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="800px"}
 
-10. Notice there's a blue button called `Add Asset`.  Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.An asset is a business resource of the project like Rules, Processes, Decision Tables, Data Objects, Data Forms, etc._
+11. Notice there's a blue button called `Add Asset`.  Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.An asset is a business resource of the project like Rules, Processes, Decision Tables, Data Objects, Data Forms, etc._
 
     ![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="800px"}
 
-11. Select the wizard for _Data Object_ from the catalog to create your business object model for the _Credit Card Holder_ enter the following and Click OK:
+12. Select the wizard for _Data Object_ from the catalog to create your business object model for the _Credit Card Holder_ enter the following and Click OK:
 
     * type `CreditCardHolder`{{copy}} as the name of the object sandbox
     * select `com.myspace.ccd_project` as the Package.
 
     ![Business Central CCD Object]({% image_path business-central-CCD-object-new.png %}){:width="800px"}
 
-12. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder data object.
+13. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder data object.
 
     ![Business Central CCD Object New Empty]({% image_path business-central-CCD-object-new-empty.png %}){:width="800px"}
 
-13. In the _New Field_ window, enter the following values and click on _Create_:
+14. In the _New Field_ window, enter the following values and click on _Create_:
 
     - Id: `age`
     - Label: `Age`
