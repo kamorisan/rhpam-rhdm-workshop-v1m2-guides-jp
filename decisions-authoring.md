@@ -1,13 +1,13 @@
 
-# 4. Authoring Decisions and Rules
+# 4. ビジネスルールとデシジョンの設計
 
-In this section you will learn:
+このセクションでは、以下のことを学習します。
 
-1. How to use your Business Object Model to automate decisions and policies.
-2. The different types of authoring tools available to you.
-3. How to use your automated decisions and rules.
+1. Business Object Model を使って、意思決定やポリシーを自動化する方法
+2. 様々な種類のオーサリングツールの使用方法
+3. 自動化された判断やルールの使用方法
 
-## Intro
+## 概要
 
 Solving a credit card dispute depends on several variables, like:
 
