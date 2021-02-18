@@ -105,12 +105,10 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="800px"}
 
 3. 右上にある3点記号をクリックして、_プロジェクトの削除_ を選択します。
-  
-  ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="800px"}
-  
+   ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="800px"}
 4. _ccd-project_ と入力し、`プロジェクトの削除` をクリックします。
-  
 5. もし削除する際に確認の画面が表示された場合は、 `保存されていない変更を破棄して続行する` を選択します。
+  
 
 ### 外部の git リポジトリからプロジェクトをインポートする
 
