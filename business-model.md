@@ -99,29 +99,21 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 ### ccd-project プロジェクトを削除
 
 1. 現在のプロジェクトを削除します。
-  
 2. 画面上部のメインメニューの下にあるリストから _ccd-project_ をクリックすると、プロジェクトのホームページに戻ります。
-   
-![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="800px"}
-
+   ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="800px"}
 3. 右上にある3点記号をクリックして、_プロジェクトの削除_ を選択します。
    ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="800px"}
 4. _ccd-project_ と入力し、`プロジェクトの削除` をクリックします。
 5. もし削除する際に確認の画面が表示された場合は、 `保存されていない変更を破棄して続行する` を選択します。
-  
 
 ### 外部の git リポジトリからプロジェクトをインポートする
 
 ドメインモデルに関連するすべてのデータオブジェクトを含むプロジェクトをインポートしてみましょう。
 
   1. `プロジェクトのインポート` をクリックします。
-  
   2. ウィンドウが開いたら、 _リポジトリー URL_ に [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) と入力し、 `インポート` をクリックします。
-  
   3. 次に、_プロジェクトのインポート_ 画面で、 _ccd-project_ を選択し, `OK` をクリックします。
-  
-  ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="800px"}
-  
+   ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="800px"}
   4. インポートしたプロジェクトのデータオブジェクトの内容について、確認をして下さい。
 
 おめでとうございます！
