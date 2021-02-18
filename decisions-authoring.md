@@ -14,32 +14,35 @@
 - 顧客の情報
 - チャージバック申請の金額
 
-The knowledge of how to apply these rules and decisions is tacit and lives only in the head of other domain experts. In order to automate the process, you will first have to express the business policies that determine how a dispute is handled in the form of rules.
 これらのルールや判断をどのように適用するかという知識は、暗黙のうちに他のドメインエキスパートの頭の中に存在するものになってしまっています。
 プロセスを自動化するためには、まず、チャージバック申請の処理方法を決定する業務知識をルールという形で表現する必要があります。
 
 このワークショップのケースでは、プロセス上の異なるステージに対して2つのルールが定義されています。
 
-## Calculating the Risk
+## リスクの計算
 
-At the moment, all processing is manual. There is a group of agents dedicated to making decisions based on the data of the dispute. This is not only expensive, but also very prone to errors and inconsistencies.
+現状の業務においては、チャージバック申請の処理手続きはすべて手作業で実施しています。
+チャージバックのデータに基づいて、意思決定を行う専門の部署ががあります。
+これにはコストがかかることに加え、エラーや不整合が発生しやすいという問題があります。
 
-The cost of processing a dispute for Pecunia Corp. is high and independent of the amount that is being disputed. That is why it's very important to have flexible rules that reduce the processing cost and time. Apart from reducing cost, this will also improve customer experience.
+Pecunia Corp. のチャージバック申請の処理には、チャージバック金額とは別に、高額の費用がかかっています。
+だからこそ、処理コストと時間を削減する柔軟なルールを持つことが非常に重要なのです。
+コストの削減以外にも、顧客体験の向上にもつながります。
 
-The rules defined for the process are:
+プロセスのために定義されたルールは以下の通りです。
 
-- Automatic chargeback is only available to Platinum and Gold Credit Card Holders
+- Platinum、Gold のクレジットカードのお客様に対しては、チャージバック申請を自動承認する
 
-- The risk of the transaction is determined by the type of user and the amount of the dispute
+- トランザクションのリスクを、お客様のカード種別とチャージバック申請の金額によって決定します
 
-      - Standard customer 0-100: low risk
-      - Standard customer 100-500: medium risk
-      - Standard customer above 500: high risk
-      - Silver customer 0-250: low risk
-      - Silver customer 250-500: medium risk
-      - Silver customer above 500: high risk
-      - Gold customer 0-500: low risk
-      - Gold customer above 500: medium risk
+      - カード種別が **Standard** で、チャージバック申請金額が **100 未満** の場合、リスクは **low**
+      - カード種別が **Standard** で、チャージバック申請金額が **100 以上、 500 未満** の場合、リスクは **medium**
+      - カード種別が **Standard** で、チャージバック申請金額が **500 以上** の場合、リスクは **high**
+      - カード種別が **Silver** で、チャージバック申請金額が **250 未満** の場合、リスクは **low**
+      - カード種別が **Silver** で、チャージバック申請金額が **250 以上、 500 未満** の場合、リスクは **medium**
+      - カード種別が **Silver** で、チャージバック申請金額が **500 以上** の場合、リスクは **high**
+      - カード種別が **Gold** で、チャージバック申請金額が **500 未満** の場合、リスクは **low**
+      - カード種別が **Gold** で、チャージバック申請金額が **500 以上** の場合、リスクは **medium**
 
 ## The Authoring Tools
 
