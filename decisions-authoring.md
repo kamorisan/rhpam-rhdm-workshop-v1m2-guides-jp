@@ -52,7 +52,7 @@ Pecunia Corp. のチャージバック申請の処理には、チャージバッ
 
 ### デシジョンテーブル
 
-#### デシジョンテーブルのの作成
+#### デシジョンテーブルの作成
 
 リスクの算出の背後にあるロジックを定義する非常に一般的な方法は、この情報をスプレッドシートに保存することです。
 Red Hat Process Automation Manager を使用すると、同じスプレッドシートのアプローチを使用して、エンジン内で実行可能な資産 (すなわち、ルールのセット) にすることができます。
@@ -67,24 +67,24 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
 
     ![Business Central Decision Table Add Asset Guided]({% image_path business-central-decision-table-add-asset-guided.png %}){:width="800px"}
 
-1. Type the following values on the `Create New Guided Decision Table` wizard
+1. `新規作成 ガイド付きデシジョンテーブル` のウィンドウで、以下の値を入力します。
 
-    - Guided Decision Table (Name): `risk-evaluation`
-    - Package: `com.myspace.ccd_project`
+    - ガイド付きデシジョンテーブル (Name): `risk-evaluation`
+    - パッケージ: `com.myspace.ccd_project`
 
-    Click _Ok_ and _Finish_.
+    それ以外の情報はそのままにして、 _OK_ をクリックします。
 
-2. You should see the `Guided Decision Table` editor with an empty table.
+2. `ガイド付きデシジョンテーブル` エディタに空のテーブルが表示されているはずです。
 
     ![Business Central Decision Table New]({% image_path business-central-decision-table-new.png %}){:width="800px"}
 
-    There are 5 tabs in the editor:
+    エディタには5つのタブがあります:
 
-    - _Model_: The model diagram of the Decision Table
-    - _Columns_: Add, Edit or Delete columns in your table. A column can represent an Attribute, Metadata, a Constraint (rule left-hand-side or LHS) on a property of a Business Model Object, or an Action (rule right-hand-side or RHS).
-    - _Overview_: Contains the meta-information of your asset: Version, Description, Last Modified, etc.
-    - _Source_: Is the actual source code that is generated from the Decision Table Model. In the runtime engine, decision tables are translated into native DRL (Drools Rule Language), where each row in the table is translated into a rule.
-    - _Data Objects_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
+    - _モデル_: デシジョンテーブルのモデル図
+    - _列_: テーブルに列を追加、編集、または削除します。カラムは、属性、メタデータ、 Business Object Model のプロパティ上の制約（ルール左側またはLHS）、またはアクション（ルール右側またはRHS）を表すことができます。
+    - _概要_: アセットのメタ情報（バージョン、説明、最終更新日など）が含まれます。
+    - _ソース_: デシジョンテーブルモデルから生成される実際のソースコードです。ルールエンジンでは、デシジョンテーブルhzDRL（Drools Rule Language）に変換され、テーブルの各行はルールに変換されます。
+    - _データオブジェクト_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
 
 In our system, the properties evaluated to determine the risk scoring are:
 
