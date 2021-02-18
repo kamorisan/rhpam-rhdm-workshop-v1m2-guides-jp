@@ -121,28 +121,30 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 これでビジネスルールと意思決定の自動化に取り組むことができるようになります！
 
 
-### Deleting the ccd-project project
+### ccd-project プロジェクトを削除
 
-  1. Delete the current project
-  2. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
+  1. 現在のプロジェクトを削除します。
+  2. 画面上部のメインメニューの下にあるリストから _ccd-project_ をクリックすると、プロジェクトのホームページに戻ります。
     ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="800px"}
 
-  3. Delete the project by clicking the hamburger menu & selecting _Delete Project_
+  3. 右上にある3点記号をクリックして、_プロジェクトの削除_ を選択します。
     ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="800px"}
 
-  4. Type in _ccd-project_ and click `Delete Project`
-  5. If asked you can `Discard unsaved changes and proceed`.
+  4. _ccd-project_ と入力し、`プロジェクトの削除` をクリックします。
+  5. もし削除する際に確認の画面が表示された場合は、 `保存されていない変更を破棄して続行する` を選択します。
 
-### Importing a project from external git repository
+### 外部の git リポジトリからプロジェクトをインポートする
 
 Let's import the project with all the Data Objects relative to the Domain Model:
 
-  1. Click the `Import Project` button;
-  2. On the pop-up, enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) as the _Repository URL_ and click `Import`
-  3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
+  1. `プロジェクトのインポート` をクリックします。
+  2. ウィンドウが開いたら、 _リポジトリー URL_ に [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) と入力し、 `インポート` をクリックします。
+  3. 次に、_プロジェクトのインポート_ 画面で、 _ccd-project_ を選択し, `OK` をクリックします。
     ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="800px"}
 
-  4. Examine the other newly-imported entities
+  4. インポートしたプロジェクトのデータオブジェクトの内容について、確認をして下さい。
 
-Congratulations, now you that we've seen how to define Data Objects, we can now start working with the automation of our business rules and decisions!
+おめでとうございます！
+このセクションでは、データオブジェクトの定義方法を確認しました。
+これでビジネスルールと意思決定の自動化に取り組むことができるようになります！
 
