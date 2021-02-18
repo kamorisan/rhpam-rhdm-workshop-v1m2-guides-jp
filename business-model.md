@@ -124,7 +124,7 @@ Eric Evans氏によって提唱された [_Domain Driven Design_](https://en.wik
 
 ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="800px"}
 
-  4. インポートしたプロジェクトのデータオブジェクトの内容について、確認をして下さい。
+   4. インポートしたプロジェクトのデータオブジェクトの内容について、確認をして下さい。
 
 おめでとうございます！
 このセクションでは、データオブジェクトの定義方法を確認しました。
