@@ -44,32 +44,37 @@ Pecunia Corp. のチャージバック申請の処理には、チャージバッ
     - カード種別が **Gold** で、チャージバック申請金額が **500 未満** の場合、リスクは **low**
     - カード種別が **Gold** で、チャージバック申請金額が **500 以上** の場合、リスクは **medium**
 
-## The Authoring Tools
+## オーサリングツール
 
-You have defined the Business Object Model in the previous lab. In the last step of the previous lab, you've imported a project with the complete Business Object Model. You will use this project as the base for this lab.
+前のセクションで Business Object Model を定義しました。
+前のセクションの最後のステップでは、完全な Business Object Model を持つプロジェクトをインポートしました。
+このプロジェクトをこのラボのベースとして使用します。
 
-### Decision Tables
+### デシジョンテーブル
 
-#### Creating the Decision Table
+#### デシジョンテーブルのの作成
 
-A very common way to define the logic behind risk assessment is to store this information in spreadsheets. With Red Hat Process Automation Manager you can use the same spreadsheet approach and make it an executable asset (i.e. a set of rules) in the engine. In this section you are going to create a _Decision Table_ to automate the risk assessment rules that were given to you.
+リスクの算出の背後にあるロジックを定義する非常に一般的な方法は、この情報をスプレッドシートに保存することです。
+Red Hat Process Automation Manager を使用すると、同じスプレッドシートのアプローチを使用して、エンジン内で実行可能な資産 (すなわち、ルールのセット) にすることができます。
+このセクションでは、リスク算出のルールを自動化するために _デシジョンテーブル_ を作成します。
 
-1. First, go back to the Library view and click on the blue `Add Asset` button in the top right corner.
+1. まず、ライブラリビューに戻り、右上の青い `アセットの追加` ボタンをクリックします。
 
     ![Business Central Decision Table Add Asset]({% image_path business-central-decision-table-add-asset.png %}){:width="800px"}
 
-2. Select `Guided Decision Table` from the catalog of assets (the UI allows you to filter the assets per type by using the filter drop-down and input box in the upper-left of the screen. Select `Decisions` to filter on decision assets).
+2. アセットのカタログから`ガイド付きデシジョンテーブル`を選択します。 <br> 
+(画面左上のフィルタと入力ボックスを利用して、タイプ別にフィルタリングすることができます。デシジョンアセットをフィルタリングするには、`デシジョン`を選択します)
 
     ![Business Central Decision Table Add Asset Guided]({% image_path business-central-decision-table-add-asset-guided.png %}){:width="800px"}
 
-3. Type the following values on the `Create New Guided Decision Table` wizard
+1. Type the following values on the `Create New Guided Decision Table` wizard
 
     - Guided Decision Table (Name): `risk-evaluation`
     - Package: `com.myspace.ccd_project`
 
     Click _Ok_ and _Finish_.
 
-4. You should see the `Guided Decision Table` editor with an empty table.
+2. You should see the `Guided Decision Table` editor with an empty table.
 
     ![Business Central Decision Table New]({% image_path business-central-decision-table-new.png %}){:width="800px"}
 
