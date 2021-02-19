@@ -91,7 +91,7 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
     - 顧客のクレジットカードの種別
     - クレジットカード不正利用の対象となっている金額の合計
 
-#### デシジョンテーブルの作成
+#### デシジョンテーブルの列の設定
 
 `Credit Card Holder` の条件列を追加していきます。
 
@@ -145,17 +145,17 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
 
 10. `保存` をクリックし、デシジョンテーブルを保存します。
 
-11. Next go to the `Columns` tab and Click on `Insert Column`. This time you add an Action, the Right-Hand-Side of a rule. This action will be fired when the conditions are met. Select `Set the value of a field` and click next.
+11. 次に `列` タブに移動し、`Insert Column` をクリックします。今回はルールの右側にアクション列を追加します。このアクションは条件が満たされたときに実行されます。`フィールド値をセット`を選択して、`次へ`をクリックします。
 
-12. Set the risk scoring property of the `FraudData` object. So in the dropdown menu select the object `FraudData` bound to the variable `data`.Click Next.
+12. `FraudData` オブジェクトのリスク評価を設定します。パターンのドロップダウンメニューで、変数 `data` にバインドされたオブジェクト `FraudData` を選択します。
 
     ![Business Central Decision Table Columns Action Data]({% image_path business-central-decision-table-columns-action-data.png %}){:width="800px"}
 
-13. Select the field `disputeRiskRating` and click Next. You don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
+13. フィールド `disputeRiskRating` を選択し、`次へ`をクリックします。値のリストがないので、そのまま `次へ` をクリックします。列のヘッダ（説明）に `Risk Scoring` と入力し、`完了`をクリックします。
 
     ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="800px"}
 
-14. Click on the _Save_ button to save the decision table.
+14. `保存` をクリックし、デシジョンテーブルを保存します。
 
 #### Writing the business rules
 
