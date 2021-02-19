@@ -9,31 +9,33 @@
 
 これまでのラボでは、データオブジェクトのモデルと、そのモデル上で動作するルールとデシジョンを定義してきました。前のセクションでラボを完了した場合は、既存のプロジェクトを使用することができます。
 
-NOTE: _If you'd prefer to start off fresh you can delete your `ccd-project` project and re-import it using this URL: [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git)._
+NOTE: _最初からやり直したい場合は、`ccd-project` プロジェクトを削除して、この URL を使用して再インポートすることができます。[https://github.com/kamorisan/rhpam-rhdm-workshop-v1m2-labs-step-3.git](https://github.com/kamorisan/rhpam-rhdm-workshop-v1m2-labs-step-3.git)._
 
-Let's start by having an overview of assets versioning with Business Central.
+まず、Business Centralを使ったアセットのバージョン管理の概要を説明します。
 
-## Assets Versioning
+## アセットのバージョン管理
 
-As you can notice on the diagram below, Red Hat Process Automation Manager is a modular platform to develop and run decisions and processes. Until now we have mostly used **Business Central** workbench to develop rules and business models. All the assets that you create or alter using Business Central are versioned in a repository (a Git-based version control system).
+下の図で示すように、Red Hat Process Automation Manager は、意思決定やプロセスを開発・実行するためのモジュール式のプラットフォームです。
+これまでは、ルールやビジネスモデルを開発するために **Business Central** ワークベンチを主に使用してきました。
+Business Central を使用して作成または変更したアセットはすべて、リポジトリ（Git ベースのバージョン管理システム）でバージョン管理されています。
 
 ​	![RHPAM 7 Architecture]({% image_path rhpam-7-architecture.png %}){:width="800px"}
 
-Business Central automatically versions our code within git-based repository, and it also provides a way for us to check the changes and rollback to previous versions necessary.
+Business Central は git ベースのリポジトリ内のコードを自動的にバージョン管理し、必要に応じて変更点を確認したり、以前のバージョンにロールバックしたりすることができます。
 
-1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version. (**NOTE:** If you re-imported the project then there is probably only 1 version listed).
+1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version. (**NOTE:** If you re-imported the project then there is probably only 1 version listed).プロジェクト・ライブラリ・ビューに移動し、`automated-chargeback` ルールを選択します。エディタが開いたら、`最新バージョン` ボタンをクリックしてください。(**注:**プロジェクトを再インポートした場合は、おそらく1つのバージョンしか表示されません)。
 
      ![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="800px"}
 
-2. There is also more metadata about your assets stored in the repository, like the name of the user that created the asset, the time and data when it was last modified, etc.
+2. リポジトリに保存されているアセットについては、アセットを作成したユーザーの名前や、アセットが最終的に修正された時刻やデータなど、より多くのメタデータがあります。
 
      ![Business Central Chargeback Versions Detail]({% image_path business-central-chargeback-versions-detail.png %}){:width="800px"}
 
-3. Click on any of the versions in the dropdown box and you will see the version of the asset tagged.
+3. ドロップダウンボックス内のバージョンのいずれかをクリックすると、タグ付けされたアセットのバージョンが表示されます。
 
      ![Business Central Chargeback Version]({% image_path business-central-chargeback-version.png %}){:width="800px"}
 
-## Understanding the deployment process
+## デプロイメント・プロセスを理解する
 
 After your project is developed, you can build the project in Business Central and deploy it to a configured Process Server. The Process Server is the engine that executes rules and processes. It also allows distributed execution so if, for example, the execution of the case rules will be performed at bank branches, you can deploy as many Process Servers as you need all connected to your Business Central Authoring console.
 
