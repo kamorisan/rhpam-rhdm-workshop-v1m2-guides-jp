@@ -133,6 +133,7 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
         - バインディング: `data`
     - 計算タイプ: `固定値`
     - フィールド: `totalFraudAmount`
+    - 値のオプション: 空欄
     - オペレーター:
         - 1つ目の列: `は次の値以上` 、ヘッダー（説明）: `Minimum Amount`
         - 2つ目の列: `は次の値よりも小さい` 、ヘッダー（説明）: `Maximum Amount`
@@ -151,52 +152,52 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
 
     ![Business Central Decision Table Columns Action Data]({% image_path business-central-decision-table-columns-action-data.png %}){:width="800px"}
 
-13. フィールド `disputeRiskRating` を選択し、`次へ`をクリックします。値のリストがないので、そのまま `次へ` をクリックします。列のヘッダ（説明）に `Risk Scoring` と入力し、`完了`をクリックします。
+13. フィールド `disputeRiskRating` を選択し、`次へ`をクリックします。値のリストは空欄で、そのまま `次へ` をクリックします。列のヘッダー（説明）に `Risk Scoring` と入力し、`完了`をクリックします。
 
     ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="800px"}
 
 14. `保存` をクリックし、デシジョンテーブルを保存します。
 
-#### Writing the business rules
+#### ビジネスルールの書き方
 
-1. Go back to your `Model` tab. You are now going to add the actual constraints and actions, i.e. the actual rules. Looking at our requirements, the first constraint is defined as:
+1. `モデル`タブに戻ります。ここで実際の制約条件とアクション、つまり実際のルールを追加します。業務要件を見ると、最初の制約条件は次のように定義されています。
 
-    _For a standard customer, and a dispute amount between 0 and 100, the risk is low._
+    _カード種別が **Standard** で、チャージバック申請金額が **100 未満** の場合、リスクは **low**_
 
-    There are 4 levels of risk: low, medium, high and very-high. You will define these risk-levels as integers: 1,2,3, and 4.
+    リスクには、low, medium, high, very-high の4つのレベルがあります。これらのリスクレベルを0,1,2,3の整数で定義します。
 
-2. Click on the button Insert and select append row from the dropdown menu.
+2. `挿入` ボタンをクリックし、ドロップダウンメニューから`行の追加`を選択します。
 
      ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="800px"}
 
-3. Click on the _Description_ cell of the new row and type "_Standard customer low risk_". Use the following values for the other columns:
+3. 新しい行の `説明` セルをクリックして、`Standard customer low risk` と入力します。他の列には以下の値を使用します。
 
-     - Description:`Standard customer low risk`{{copy}}  
+     - 説明:`Standard customer low risk`{{copy}}  
      - Status:`Standard`{{copy}}  
      - Minimum Amount:`0`{{copy}}  
      - Max Amount:`100`{{copy}}  
      - Risk Scoring:`0`{{copy}}
 
-    Your decision table should look like this. Click Save.
+    デシジョンテーブルは以下のようになります。`保存` をクリックします。
 
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-first-row.png %}){:width="800px"}
 
-4. Based on the business rules, apply the same procedure for the rest of it.
+4. 業務要件に従い、それ以外の部分についても同様の手順を適用します。
 
-    - Standard customer 0-100: low risk (Risk scoring = 0)
-    - Standard customer 100-500: medium risk (Risk scoring = 1)
-    - Standard customer above 500: high risk (Risk scoring = 2)
-    - Silver customer 0-250: low risk (Risk scoring = 0)
-    - Silver customer 250-500: medium risk (Risk scoring = 1)
-    - Silver customer above 500: high risk (Risk scoring = 2)
-    - Gold customer 0-500: low risk (Risk scoring = 0)
-    - Gold customer above 500: medium risk (Risk scoring = 1)
+    - Standard 100未満: low risk (Risk scoring = 0)
+    - Standard 100-500: medium risk (Risk scoring = 1)
+    - Standard 500以上: high risk (Risk scoring = 2)
+    - Silver 250未満: low risk (Risk scoring = 0)
+    - Silver 250-500: medium risk (Risk scoring = 1)
+    - Silver 500以上: high risk (Risk scoring = 2)
+    - Gold 500未満: low risk (Risk scoring = 0)
+    - Gold 500以上: medium risk (Risk scoring = 1)
 
-    At the end your decision table should look as follows:
+    最後に、あなたのデシジョンテーブルは次のようになります。
 
     ​	![Business Central Decision Complete]({% image_path business-central-decision-table-complete.png %}){:width="800px"}
 
-5. Save the table once you finish.
+5. 入力が終わったら、テーブルを保存します。
 
 
 ## Guided Rules
