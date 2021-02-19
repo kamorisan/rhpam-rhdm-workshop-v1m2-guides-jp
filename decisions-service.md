@@ -37,60 +37,65 @@ Business Central は git ベースのリポジトリ内のコードを自動的�
 
 ## デプロイメント・プロセスを理解する
 
-After your project is developed, you can build the project in Business Central and deploy it to a configured Process Server. The Process Server is the engine that executes rules and processes. It also allows distributed execution so if, for example, the execution of the case rules will be performed at bank branches, you can deploy as many Process Servers as you need all connected to your Business Central Authoring console.
+プロジェクトが開発されたら、Business Centralでプロジェクトを構築し、設定されたプロセスサーバーにデプロイします。
+プロセスサーバーは、ルールやプロセスを実行するエンジンです。
+また、分散実行も可能なので、例えば、ケースルールの実行が銀行の支店で行われる場合、必要な数だけプロセスサーバーを配置して、すべてのプロセスサーバーをBusiness Centralのオーサリングコンソールに接続することができます。
 
-The Process Server supports the capabilities configured in its server configuration. A server configuration is the template that defines the configuration of a group of Execution Servers (a group can contain zero or more execution servers).
+プロセスサーバーは、サーバー構成で構成された機能をサポートします。サーバ構成は、実行サーバのグループの構成を定義するテンプレートです（グループには複数の実行サーバを含めることができます）。
 
-There are 2 things that you can configure through the template:
+テンプレートから設定できることは、以下の2つです:
 
-  - Capabilities: What can you execute in your Process Server (Process, Decisions, Planner rules). They are not mutually exclusive. I.e. an execution server can be enabled with zero or more of these capabilities enabled.
-  - Deployment Unit: what package of assets (project, Knowledge JAR) you want to deploy on the server to make available for execution.
+  - 機能: プロセスサーバーで実行できること（プロセス、ディシジョン、プランナーのルール）。これらは相互に排他的なものではありません。つまり、実行サーバは、これらの機能のうち、0つ以上の機能を有効にした状態で有効にすることができます。
+  - デプロイメントユニット: どのようなアセットのパッケージ(プロジェクト、知識JAR)をサーバーにデプロイして実行可能にしたいかを指定します。
 
 
-Let's have a glance of what happens under the covers during a deployment in a managed Process Server:
+プロセスサーバーへのデプロイ時に、何が起こるのかを一目見てみましょう。
 
-1. When you _Build and Deploy_ a project in Business Central, the _Deployment Unit_ (KJAR) is created and pushed to the artifact repository (Maven);
-2. After this, a deployment request is sent to the Execution Server;
-3. The managed Execution Server receives a deployment request for a specific _Deployment Unit_;
-4. The Execution Server fetches the _Deployment Unit_ and tries to initialize it.
+1. Business Central でプロジェクトを _ビルド ＆ デプロイ_ すると、_デプロイメント ユニット_ (KJAR) が作成され、アーティファクト リポジトリ (Maven) にプッシュされます。
+2. この後、デプロイ要求が実行サーバーに送信されます。
+3. 実行サーバは、特定の _デプロイメント ユニット_ に対するデプロイメント要求を受信します。
+4. 実行サーバは _デプロイメント ユニット_ を取得し、初期化を試みます。
 
-Once this tasks are completed, you can start, stop, or remove deployment units using Business Central as needed. You can also create additional _Deployment Units_ from previously built projects and start them on existing or new Process Servers configured in Business Central.
+このタスクが完了したら、必要に応じて Business Central を使用してデプロイメントユニットを開始、停止、または削除することができます。
+また、以前に構築したプロジェクトから追加のデプロイメントユニットを作成し、Business Central で構成された既存または新規のプロセスサーバー上で起動することもできます。
 
-## Deploying your project
+## プロジェクトのデプロイ
 
-Let's check your Process Server using Business Central.
+Business Centralを使ってプロセスサーバーをチェックしてみましょう。
 
-1. Return to the Home screen of the Business Central workbench (by clicking on the _Home_ icon in the upper left screen).
+1. Business Central ワークベンチのホーム画面に戻ります（左上画面の `ホーム` アイコンをクリック）。
 
-2. Click on _Deploy_. This will open the _Server Configurations_ perspective. Notice which capabilities you have enabled for your Process Server.
+2. `デプロイ` をクリックします。これで、_サーバー設定_の画面が開きます。プロセスサーバーで有効にしている機能に注目してください。
 
    ![Business Central Process Server Server Configurations]({% image_path business-central-server-configuration.png %}){:width="800px"}
 
-3. Return to the Home screen and select _Design_. Select `MySpace`, next, select your Credit Card Dispute project (`ccd-project`). The Library view should open with a list of all your assets. These assets will be compiled and packaged inside a _KJAR_, a _Deployment Unit_.
+3. ホーム画面に戻り、`設計` を選択します。`MySpace` を選択し、次にチャージバック申請処理プロジェクト(`ccd-project`)を選択します。ライブラリビューが開き、すべてのアセットのリストが表示されるはずです。これらのアセットはコンパイルされ、_KJAR_ ( _デプロイメントユニット_ )の中にパッケージ化されます。
 
-4. Click on the _Deploy_ button in the top right corner.
+4. 右上の `デプロイ` ボタンをクリックします。
 
     ​	![Business Central Deploy]({% image_path business-central-deploy.png %}){:width="800px"}
 
-You will see that the project is first built, meaning the assets are compiled and packaged, and then deployed to a Execution Server container. Go back to the Home screen and select Deploy. You will now see a container running with your newly created decisions.
+プロジェクトが最初にビルドされ、アセットがコンパイルされてパッケージ化され、実行サーバーのコンテナにデプロイされていることがわかります。
+ホーム画面に戻り、`デプロイ` を選択します。これで、新しく作成したディシジョンが実行されているコンテナが表示されます。
 
-## Execution
+## 実行
 
-Let's check if the service you deployed is available.
+デプロイしたサービスが利用可能か確認してみましょう。
 
-1. Go to the Main Menu and select `Deploy`>`Execution Services`.
+1. ホーム画面から、`デプロイ` を選択します。
 
-2. Click on the URL of the container, and a new tab should open:
+2. コンテナのURLをクリックすると、新しいタブが開きます。
 
      ![Business Central Execution Services Detail]({% image_path business-central-execution-services-detail.png %}){:width="800px"}
 
-3. You may also be prompted for credentials. Use the same credentials you used to log into the Business Central console.
+3. また、資格情報の入力を求められることがあります。Business Central コンソールにログインする際に使用したのと同じ資格情報を使用します。
 
     - user: `pamAdmin`
     - password: `redhatpam1!`
 
     ![Business Central Execution Services Info]({% image_path business-central-execution-services-info.png %}){:width="800px"}
 
-4. Notice the Process Service responds with details about the `Kie Container` where your `Deployment Unit` is running.
+4. `デプロイメントユニット` が実行されている `コンテナ` の詳細について、プロセスサービスが応答して表示します。
 
-Congratulations! Now that you have deployed your first business application within the engine, let's learn how about how to automate tests of the rules you created in the Credit Card Dispute project.
+おめでとうございます！
+エンジン内に最初のビジネスアプリケーションをデプロイしたので、チャージバック申請処理プロジェクトで作成した、ルールのテストを自動化する方法を学びましょう。
