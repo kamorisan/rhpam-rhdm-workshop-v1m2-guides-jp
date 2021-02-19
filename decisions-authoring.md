@@ -84,49 +84,49 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
     - _列_: テーブルに列を追加、編集、または削除します。カラムは、属性、メタデータ、 Business Object Model のプロパティ上の制約（ルール左側またはLHS）、またはアクション（ルール右側またはRHS）を表すことができます。
     - _概要_: アセットのメタ情報（バージョン、説明、最終更新日など）が含まれます。
     - _ソース_: デシジョンテーブルモデルから生成される実際のソースコードです。ルールエンジンでは、デシジョンテーブルhzDRL（Drools Rule Language）に変換され、テーブルの各行はルールに変換されます。
-    - _データオブジェクト_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
+    - _データオブジェクト_: エディタで条件やアクションとして使用できるデータオブジェクトをリストアップします。
 
-In our system, the properties evaluated to determine the risk scoring are:
+今回のシステムにおいて、リスク算出をするための必要な情報は、以下の通りです。
 
-    - Status of the Credit Card Holder
-    - Total Amount disputed from the Fraud Data
+    - 顧客のクレジットカードの種別
+    - クレジットカード不正利用の対象となっている金額の合計
 
-#### Setting up our decision table
+#### デシジョンテーブルの作成
 
-Let's add the Credit Card Holder condition column.
+`Credit Card Holder` の条件列を追加していきます。
 
-1. Go to the _Columns_ tab and click on the button `Insert Column`, select `Add Condition` and click Next.
+1. `列`タブに移動し、`Insert Column`ボタンをクリックし、`条件を追加`を選択して`次へ`をクリックします。
 
     ![Business Central Add Condition]({% image_path business-central-add-condition.png %}){:width="800px"}
 
-6. You need to define which object is going to be evaluated. Click on `Create new Fact Pattern`. Select `CreditCardHolder` as the _Fact type_ and define a variable called `holder` as the _Binding_. Click _Ok_ to dismiss the fact pattern dialog, then click _Next_.
+2. `新規ファクトパターンを作成`をクリックします。_ファクトタイプ_ として `CreditCardHolder` を選択し、_バインディング_ として `holder` という変数を定義します。`OK` をクリックして新規ファクトパターン作成ウィンドウを閉じ、`Next` をクリックします。
 
     ![Business Central Create Pattern]({% image_path business-central-create-pattern.png %}){:width="800px"}
 
-7. The calculation type is the type of evaluation that you are going to apply. In this case it will be against literal values. Select `Literal value` and click _Next_.
+3. The calculation type is the type of evaluation that you are going to apply. In this case it will be against literal values. Select `Literal value` and click _Next_.
 
-8. You need to define a constraint on the card holder's status, so select the `status` field and click _Next_.
+4. You need to define a constraint on the card holder's status, so select the `status` field and click _Next_.
 
     ![Business Central Create Pattern Field]({% image_path business-central-create-pattern-field.png %}){:width="800px"}
 
-9. Next, select the operator for the constraint. Select `equal to` from the drop down menu and click _Next_.
+5. Next, select the operator for the constraint. Select `equal to` from the drop down menu and click _Next_.
 
     ![Business Central Create Pattern Field Operator]({% image_path business-central-create-pattern-field-operator.png %}){:width="800px"}
 
-10. Since there are only 3 possible statuses, you are going to configure the fields with the values below and then click _Next_.
+6.  Since there are only 3 possible statuses, you are going to configure the fields with the values below and then click _Next_.
 
     - the _Value list_ with the following values: `Standard,Silver,Gold`
     - The _Default value_ to `Standard`
 
     ![Business Central Create Pattern Field Values]({% image_path business-central-create-pattern-field-values.png %}){:width="800px"}
 
-11. You can now configure the header of the column `Header`: `Status`.
+7.  You can now configure the header of the column `Header`: `Status`.
 
     ![Business Central Create Pattern Field Header]({% image_path business-central-create-pattern-field-header.png %}){:width="800px"}
 
-12. Click Finish and go back to the `Model` tab in the editor. You should see the newly created column.
+8.  Click Finish and go back to the `Model` tab in the editor. You should see the newly created column.
 
-13. Repeat the same steps to add 2 more columns:
+9.  Repeat the same steps to add 2 more columns:
 
     - Pattern:
         - Fact type: `FraudData`
@@ -143,15 +143,15 @@ Let's add the Credit Card Holder condition column.
 
     ![Business Central Decision Table Columns]({% image_path business-central-decision-table-columns.png %}){:width="800px"}
 
-13. Click on the _Save_ button to save the decision table.
+10. Click on the _Save_ button to save the decision table.
 
-14. Next go to the `Columns` tab and Click on `Insert Column`. This time you add an Action, the Right-Hand-Side of a rule. This action will be fired when the conditions are met. Select `Set the value of a field` and click next.
+11. Next go to the `Columns` tab and Click on `Insert Column`. This time you add an Action, the Right-Hand-Side of a rule. This action will be fired when the conditions are met. Select `Set the value of a field` and click next.
 
-15. Set the risk scoring property of the `FraudData` object. So in the dropdown menu select the object `FraudData` bound to the variable `data`.Click Next.
+12. Set the risk scoring property of the `FraudData` object. So in the dropdown menu select the object `FraudData` bound to the variable `data`.Click Next.
 
     ![Business Central Decision Table Columns Action Data]({% image_path business-central-decision-table-columns-action-data.png %}){:width="800px"}
 
-16. Select the field `disputeRiskRating` and click Next. You don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
+13. Select the field `disputeRiskRating` and click Next. You don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
 
     ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="800px"}
 
