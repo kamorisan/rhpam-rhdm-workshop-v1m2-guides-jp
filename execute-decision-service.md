@@ -1,32 +1,36 @@
-# 7. Invoking your Decision Service
+# 7.デシジョンサービスの実行
 
-In the previous step we've interacted with the Decision Service via a web-application. In this step we'll have a closer look at the RESTful API used in the communication between the web-application and the Decision Service. We will be using the Swagger API documentation for this.
+前のセクションでは、Webアプリケーションを介して デシジョンサービス と対話しました。
+このステップでは、Webアプリケーションと デシジョンサービス 間の通信に使用される RESTful API を詳しく見ていきます。
+ここでは、Swagger APIのドキュメントを使用します。
 
-Swagger provides a standard way to describe and document RESTful APIs. The RESTful API of the PAM execution server allows other platforms, other applications, to easily communicate with the execution server using open standards.
+Swagger は、RESTful API を記述し、ドキュメント化するための標準的な方法を提供しています。
+PAM実行サーバの RESTful API を利用することで、他のプラットフォーム、他のアプリケーションが実行サーバと簡単に通信できるようになります。
 
-To access the Swagger page of the execution server, we first need to get the URL for the execution server.
 
-1. In the OpenShift console, open the `Topology` view of the `rhpam-userX` project. Click on the `rhpam7-kieserver` to open the engine in another tab.
+実行サーバーの Swagger ページにアクセスするには、まず実行サーバーのURLを取得する必要があります。
+
+1. OpenShiftコンソールで、`rhpam-userX` プロジェクトの `Topology` ビューを開きます。`rhpam7-kieserver` をクリックして別のタブでエンジンを開きます。
 
     ![Execution Server Route]({% image_path kie-server-route.png %}){:width="800px"}
 
-2. A new browser tab should open. Append to the end of the URL, `/docs`. TThe full URL will look soomething like http://insecure-rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/. You will see the following page
+2. 新しいブラウザタブが開くはずです。URL の最後に `/docs` を付け加えてください。URL は http://insecure-rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/ のようになります。すると、次のようなページが表示されます。
 
     ![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="800px"}
 
-3. In this page, navigate to the section that says **KIE session assets**, and click on the green bar that says *POST /server/containers/instances/{containerId} Executes one or more runtime commands*. This will show the API description of this RESTful operation.
+3. このページでは、**KIE session assets** というセクションに移動し、`POST /server/containers/instances/{containerId}` という緑色のバーをクリックします。このRESTful APIの説明が表示されます。
 
-4. Click on the *Try it out* button at the right of the panel, this will allow you to enter the values of the request.
+4. パネルの右にある `Try it out` ボタンをクリックすると、リクエストの値を入力することができます。
 
-5. First we change the *Parameter content type* and the *Response content type* from `application/xml` to `application/json`. This specifies the data format that we will be using for our request and response. In this case this is the JSON format.
+5. まず、`Parameter content type` と `Response content type` を `application/xml` から `application/json` に変更します。これはリクエストとレスポンスに使うデータフォーマットを指定します。この場合、これはJSONフォーマットです。
 
     ![Swaggger Application JSON]({% image_path swagger-application-json.png %}){:width="800px"}
 
-6. Next we need to specify the container-id that contains the deployment of the rules that we want to evaluate. The name of our container is `ccd-project_1.0.0-SNAPSHOT`{{copy}}.
+6. 次に、評価したいルールの展開を含むコンテナIDを指定する必要があります。コンテナの名前は `ccd-project_1.0.0-SNAPSHOT`{{copy}}です。
 
-7. Finally, we provide the body of the request. In the body we pass the data, based on our domain model or business model, on which we evaluate the rules. Paste the following request body into the *body* text-area in the panel:
+7. 最後に、リクエストのBodyを提供します。本文では、ドメインモデルやビジネスモデルに基づいたデータを渡し、ルールを評価します。パネルの `body` テキストエリアに以下のリクエストボディを貼り付けてください。
 
-    We can see that we pass in the `FraudData`, with a `totalFraudAmount` of 1000.0. We also pass in the `CreditCardHolder` with a *Gold* status.
+    `FraudData` の `totalFraudAmount` の値が *1000.0* です。また、`CreditCardHolder` の`Status` は *Gold* です。
 
     ```
     {  
@@ -69,17 +73,15 @@ To access the Swagger page of the execution server, we first need to get the URL
     }
     ```
 
-8. After inputing the data above, click on the blue *Execute* button to fire the request.
-    _If the browser asks for a username and password, use the same username/password you used to log into Business Central_
+8. 上記のデータを入力したら、青い `Execute` ボタンをクリックしてリクエストを実行します。
+    _ブラウザでユーザー名とパスワードを聞かれた場合は、Business Centralにログインしたときと同じユーザー名とパスワードを使用してください。_
 
   ![Swaggger Request]({% image_path swagger-request.png %}){:width="800px"}
 
-  If all goes well, the decision service will reply with the following response:
+正常に動作すると、デシジョンサービスから以下のような応答が返ってきます。
 
   ![Swaggger Response]({% image_path swagger-response.png %}){:width="800px"}
 
-Note that the rules have qualified this data for *automatic processing* and the risk has been set to *1*:
+このサービスを `CreditCardHolder` や `FraudData` に他の値を設定してテストし、出力を確認してみてください。
 
-Feel free to test the service with other values for the `CreditCardHolder` and `FraudData` and check the output.
-
-This concludes the testing of our service using REST API's to interact directly with the engine.
+これで、エンジンと直接対話するためのREST APIを使用した、デシジョンサービスのテストを終了します。
