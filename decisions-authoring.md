@@ -103,47 +103,47 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
 
     ![Business Central Create Pattern]({% image_path business-central-create-pattern.png %}){:width="800px"}
 
-3. The calculation type is the type of evaluation that you are going to apply. In this case it will be against literal values. Select `Literal value` and click _Next_.
+3. 計算タイプは、適用する評価のタイプです。この場合は固定値に対する評価になります。`固定値` を選択し、`次へ` をクリックします。
 
-4. You need to define a constraint on the card holder's status, so select the `status` field and click _Next_.
+4. カード所持者のステータス（カード種別）に条件を定義する必要があるので、`status`フィールドを選択して、`次へ` をクリックします。
 
     ![Business Central Create Pattern Field]({% image_path business-central-create-pattern-field.png %}){:width="800px"}
 
-5. Next, select the operator for the constraint. Select `equal to` from the drop down menu and click _Next_.
+5. 次に、オペレーター（制約の演算子）を選択します。ドロップダウンメニューから `は次の値と等しい` を選択し、`次へ` をクリックします。
 
     ![Business Central Create Pattern Field Operator]({% image_path business-central-create-pattern-field-operator.png %}){:width="800px"}
 
-6.  Since there are only 3 possible statuses, you are going to configure the fields with the values below and then click _Next_.
+6.  このデシジョンテーブルで扱うステータスは3つしかありませんので、以下の値でフィールドを設定し、`次へ` をクリックします。
 
-    - the _Value list_ with the following values: `Standard,Silver,Gold`
-    - The _Default value_ to `Standard`
+    - 値リスト (オプション): `Standard,Silver,Gold`
+    - デフォルト値: `Standard`
 
     ![Business Central Create Pattern Field Values]({% image_path business-central-create-pattern-field-values.png %}){:width="800px"}
 
-7.  You can now configure the header of the column `Header`: `Status`.
+7.  ヘッダー（説明）: `Status` と入力してください。
 
     ![Business Central Create Pattern Field Header]({% image_path business-central-create-pattern-field-header.png %}){:width="800px"}
 
-8.  Click Finish and go back to the `Model` tab in the editor. You should see the newly created column.
+8.  `完了` をクリックし、エディタの `Model` タブを選択します。新しく作成された列が表示されているはずです。
 
-9.  Repeat the same steps to add 2 more columns:
+9.  同じ手順を繰り返して、さらに2つの列を追加します。
 
-    - Pattern:
-        - Fact type: `FraudData`
-        - Binding: `data`
-    - Calculation Type: `Literal value`
-    - property: `totalFraudAmount`
-    - operation:
-        - `greater than or equal to` for one column. Use header name: "Minimum Amount"
-        - `less than` for the second column. Use header nam "Maximum Amount"
+    - パターン:
+        - ファクトタイプ: `FraudData`
+        - バインディング: `data`
+    - 計算タイプ: `固定値`
+    - フィールド: `totalFraudAmount`
+    - オペレーター:
+        - 1つ目の列: `は次の値以上` 、ヘッダー（説明）: `Minimum Amount`
+        - 2つ目の列: `は次の値よりも小さい` 、ヘッダー（説明）: `Maximum Amount`
 
-    Note that for the second column you don't need to create a new fact pattern, you can reuse the existing one.
+    2つ目の列については、新しいファクト・パターンを作成する必要はなく、既存のパターンを再利用できることに注意してください。
 
-    At the end your decision table should look like this:
+    最後に、このデシジョンテーブルは次のようになります。
 
     ![Business Central Decision Table Columns]({% image_path business-central-decision-table-columns.png %}){:width="800px"}
 
-10. Click on the _Save_ button to save the decision table.
+10. `保存` をクリックし、デシジョンテーブルを保存します。
 
 11. Next go to the `Columns` tab and Click on `Insert Column`. This time you add an Action, the Right-Hand-Side of a rule. This action will be fired when the conditions are met. Select `Set the value of a field` and click next.
 
