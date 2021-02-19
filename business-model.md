@@ -1,6 +1,6 @@
 # 3. Business Object Model
 
-このセクションでは、以下のことを学習します。
+このセクションでは、以下のことを学習します:
 
 1. Business Object Models とは？
 2. Business Central で、Business Object Models を作成する方法

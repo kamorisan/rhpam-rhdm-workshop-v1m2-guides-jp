@@ -1,7 +1,7 @@
 
 # 5. デシジョンサービス
 
-このセクションでは、以下のことを学習します。
+このセクションでは、以下のことを学習します:
 
 1. 前のセクションで作成したルールの使用方法
 2. デシジョンをサービスとして公開するための方法。
@@ -23,7 +23,7 @@ Business Central を使用して作成または変更したアセットはすべ
 
 Business Central は git ベースのリポジトリ内のコードを自動的にバージョン管理し、必要に応じて変更点を確認したり、以前のバージョンにロールバックしたりすることができます。
 
-1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version. (**NOTE:** If you re-imported the project then there is probably only 1 version listed).プロジェクト・ライブラリ・ビューに移動し、`automated-chargeback` ルールを選択します。エディタが開いたら、`最新バージョン` ボタンをクリックしてください。(**注:**プロジェクトを再インポートした場合は、おそらく1つのバージョンしか表示されません)。
+1. プロジェクト・ライブラリ・ビューに移動し、`automated-chargeback` ルールを選択します。エディタが開いたら、`最新バージョン` ボタンをクリックしてください。(**注:**プロジェクトを再インポートした場合は、おそらく1つのバージョンしか表示されません)。
 
      ![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="800px"}
 

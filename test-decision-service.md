@@ -1,50 +1,53 @@
-# 6. Testing your Decision Service
+# 6. デシジョンサービスのテスト
 
-Now that you've created your Decision Service, and have deployed it on the Red Hat Process Automation Manager execution server, let's learn how we can test it.
+デシジョンサービス を作成し、Red Hat Process Automation Manager 実行サーバーにデプロイしたので、それをテストする方法を学びましょう。
 
-In this section you will:
+このセクションでは、以下のことを学習します:
 
-1. Learn how to create test scenarios to validate rules implementation;
-2. Learn how to execute test scenarios;
-3. Test the business application you deployed, by using an external app.
+1. ルールの実装を検証するためのテストシナリオの作成
+2. テストシナリオの実行
+3. デプロイした業務アプリケーションを外部アプリを使用してテストする
 
-# Introduction to test scenarios
+# テストシナリオの紹介
 
-There are various ways in which you can test a Decision Service. It is a good practice to write test-cases for individual rules, groups of rules, and your entire service.
+デシジョンサービスをテストするには、さまざまな方法があります。
+個々のルール、ルールのグループ、そしてサービス全体のテストケースを書くのは重要です。
 
-These test-cases can be automatically executed when the code and rules of your service are compiled and packaged. This provides the guarantee that your service is tested properly before it's deployed into a production environment. It ensures that the logic that is executed and the decision that are made are correct and according to specification. Red Hat Process Automation Manager provides full support for these kind of testing scenarios.
+これらのテストケースは、サービスのコードとルールがコンパイルされてパッケージ化されたときに自動的に実行されます。
+これにより、本番環境にデプロイする前にサービスが適切にテストされていることを保証すると共に、実行されるロジックと決定が仕様に沿って正しく行われていることが保証されます。
+Red Hat Process Automation Manager は、この種のテストシナリオを完全にサポートします。
 
-Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feature, in which you can build various test scenarios for your rules.
+Red Hat Process Automation Manager には、洗練された _テスト シナリオ_ の機能が含まれており、ルールのための様々なテストシナリオを構築することができます。
 
 ## Test Scenario
 
-1. Go back to the project's `Asset Library` view. Click on the _Add Asset_ blue button. Select _Decision_ in the asset filter in the upper left of the screen, to filter out the decision assets.
+1. プロジェクトの `アセットライブラリ` ビューに戻ります。青い `アセットの追加` ボタンをクリックします。画面左上のアセットフィルタで `デシジョン` を選択し、デシジョンアセットをフィルタリングします。
 
-2. Select the `Test Scenario` tile. Give the scenario the name `risk-evaluation-tests` and set the package to `com.myspace.ccd_project`. Set the _Source Type_ to `Rule`.
+2. `テストシナリオ`を選択します。シナリオの名前を `risk-evaluation-tests` とし、パッケージを `com.myspace.cd_project` に設定します。ソースタイプを `RULE` に設定します。
 
     ![Test Scenario Create]({% image_path test-scenario-create.png %}){:width="800px"}
 
-3. The scenario testing tool uses the concept in which _Given_ a specific set of input data, we _Expect_ a certain result. To implement our test scenario we therefore have to specify the input data of our rules (_Given_) and the results we expect our rules to produce for the given input data.
+3. シナリオテストツールは、特定の入力データを _Given_ し、特定の結果を _Expect_ するという概念を使用しています。テストシナリオを実装するためには、ルールの入力データ( _Given_ )と、与えられた入力データに対してルールが生成することを期待する結果( _EXPECT_ )を指定する必要があります。
 
-4. In the editor, click on the _Data Objects_ tab. If everything is correct, there should be 3 data types listed: `AdditionalInformation`, `CreditCardHolder` and `FraudData`.
+4. エディタで `データオブジェクト` タブをクリックします。すべてが正しく表示されていれば、`AdditionalInformation`, `CreditCardHolder`, `FraudData` の3つのデータ型がリストアップされているはずです。
 
-5. Go back to the _Model_ tab. To test our rules, we need to provide the input data and the expected output. Our decision table operates on 2 datatypes, `CreditCardHolder` and `FraudData`. So let's start by creating a column for our `CreditCardHolder` in the _Given_ part of the scenario testing table. Click on the _INSTANCE 1_ cell in the table. On the right-hand-side of the editor, in the _Test Tools_ panel, expand the _Data Object_ `CreditCardHolder`, select the `status` field and click on the _Insert Data Object_ button.
+5. `モデル` タブに戻ります。ルールをテストするために、入力データと期待される出力を提供する必要があります。デシジョンテーブルは2つのデータ型、`CreditCardHolder` と `FraudData` で動作します。そこで、シナリオテストテーブルの_Given_ 部分に `CreditCardHolder` の列を作成してみましょう。テーブルの _INSTANCE 1_ セルをクリックします。エディタの右側の _テストツール_ パネルで、_データオブジェクト_ `CreditCardHolder` を展開し、`status` フィールドを選択し、`データオブジェクトの挿入` ボタンをクリックします。
 
     ![Test Scenario Add Given CCH Status]({% image_path test-scenario-add-given-cch-status.png %}){:width="800px"}
 
-    The column in the _Given_ section will be configured to represent that `status` field of the `CreditCardHolder` object.
+    _Given_ セクションの列は `CreditCardHolder` オブジェクトの `status` フィールドを表すように設定されます。
 
-6. To add an additional column in the _Given_ section of the table, right-click on the _Given_ column and select `Insert column right`.
+6. テーブルの _Given_ セクションに列を追加するには、_Given_ 列を右クリックして `右に列を挿入` を選択します。
 
     ![Test Scenario Given Insert Column Right]({% image_path test-scenario-given-insert-column-right.png %}){:width="800px"}
 
-7. Click on either the cell with the word `INSTANCE` or `PROPERTY`, and in the _Test Tools_ panel, expand _Data Object_ `FraudData`, and select the field `totalFraudAmount`. click on the _Insert Data Object_ button.
+7. `INSTANCE` または `PROPERTY` と書かれたセルをクリックし、_テストツール_ パネルで、_データオブジェクト_ `FraudData`を展開し、フィールド `totalFraudAmount` を選択し、`データオブジェクトの挿入` ボタンをクリックします。
 
-8. Now that we have configured the 2 columns that define our input data, we can now configure the column in which we can set our expected result. Click on either the `INSTANCE` or `PROPERTY` cell in the `EXPECT` cell. In the _Test Tools_ panel on the right, expand the `FraudData` object, select the `disputeRiskRating` field, and click _Add_.
+8. 入力データを定義する2つの列を設定したので、期待される結果を設定する列を設定します。`EXPECT` セル内の `INSTANCE` または `PROPERTY` セルをクリックします。右側の _テストツール_ パネルで、`FraudData` オブジェクトを展開し、`disputeRiskRating` フィールドを選択し、`データオブジェクトの挿入` ボタンをクリックします。
 
     ![Test Scenario Table Configured]({% image_path test-scenario-table-configured.png %}){:width="800px"}
 
-9. With the table configured, we can now start adding our test-cases. Add a row with the following values:
+9. テーブルが設定されたので、テストケースの追加を開始します。以下の値を持つ行を追加します。
     - Given:
         - CreditCardHolder.status: `Standard`
         - FraudData.totalFraudAmount: `42`
@@ -53,9 +56,9 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feat
 
     ![Test Scenario First Test]({% image_path test-scenario-first-test.png %}){:width="800px"}
 
-10. Run the test by clicking on the _Play_ button in the top menu (next to the _Validate_ button). If everything is correct, the test will run and the result will be shown.
+10. メニューの `実行` ボタン（ `検証` ボタンの隣）をクリックしてテストを実行します。すべてが正しい場合、テストが実行され、結果が表示されます。
 
-11. Add some additional tests to complete your scenario tesing, for example:
+11. シナリオテストを完成させるために、例えば、いくつかの追加テストを追加します。
     - Given:
         - CreditCardHolder.status: `Gold`
         - FraudData.totalFraudAmount: `863`
@@ -64,21 +67,23 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feat
 
     ![Test Scenario Two Test]({% image_path test-scenario-two-tests.png %}){:width="800px"}
 
-Feel free to try incorrect values to the expected column to check the behavior of the tooling.
+ツールの動作を確認するために、期待される列に間違った値を自由に試してみてください。
 
-## Test via Web Application
+## Webアプリケーションからのテスト
 
-In the previous exercise, we used the _Test Scenario_ tooling to test the rules in our Credit Card Dispute project. Now we will test the deployed service via the REST API it exposes.
+前の演習では、_テストシナリオ_ ツールを使用して、チャージバック申請処理プロジェクトのルールをテストしました。今度は、それが公開する REST API を介してデプロイされたサービスをテストします。
 
-In order to do that, let's use a simple web-application that we've provided for you. The application allows you to enter the data of the credit-card holder, and the data of the line item. The data is submitted to the Decision Server, which will calculate the risk of the transaction and determine whether the data can be automatically processed.
+そのためには、用意されているシンプルなWebアプリケーションを使ってみましょう。
+このアプリケーションでは、クレジットカード所持者のデータと、トランザクションのデータを入力することができます。
+そのデータはデシジョンサーバーに送信され、トランザクションのリスクを計算して自動処理できるかどうかを判断してくれます。
 
 ​	![ReactJS App]({% image_path reactjs-app.png %}){:width="800px"}
 
-1. To access the application, go back to your OpenShift environment, and click on the `react-web-app` route to open it in a new tab:
+1. アプリケーションにアクセスするには、OpenShiftコンソールに戻り、`react-web-app` Route をクリックして新しいタブで開きます。
 
    ![ReactJS App Route]({% image_path openshift-react-app-route.png %}){:width="800px"}
 
-2. Once you've opened the react web app, enter the following details:
+2. ReactのWebアプリケーションを開いたら、以下の詳細を入力します:
 
     - **Name:** Jim
     - **Age:** 52
@@ -86,10 +91,12 @@ In order to do that, let's use a simple web-application that we've provided for 
     - **Description:** Delta Airlines
     - **Amount:** 1000
 
-3. Next, click on the _Submit_ button. The application will send a RESTful request to the Decision Server. If everything is working correctly, the Decision Server will send a result that will be displayed in the application:
+3. 次に、`Submit`ボタンをクリックします。アプリケーションが デシジョンサーバー に RESTful リクエストを送信します。すべてが正常に動作していれば、デシジョンサーバー はアプリケーションに表示される結果を送信します。
 
     ![ReactJS App Request Response]({% image_path reactjs-app-request-response.png %}){:width="800px"}
 
-We can see that the `riskRating` has been set to **1** and the transaction is eligible for automated processing. Feel free to test your Decision Service with different values to see if all the use-cases you've implemented in your rules are covered.
+`riskRating` が **1** に設定されており、トランザクションが自動処理の対象となっていることがわかります。
+ルールに実装したユースケースがすべてカバーされているかどうかを確認するために、さまざまな値を使って デシジョンサービス をテストしてみてください。
 
-We have now successfully tested our decision service. In the next step we will take a closer look at the RESTful API exposed by the service, and we will see how we can test the services via the API documentation page.
+これでデシジョンサービスのテストに成功しました。
+次のセクションでは、サービスによって公開されているRESTful APIを詳しく見ていき、APIのドキュメントページからサービスをテストする方法を見ていきます。
