@@ -308,19 +308,20 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
 
      ​	![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="800px"}
 
-21. Finally, click on _Save_ to save the rule.
+21. 最後に、`保存` をクリックしてルールを保存します。
 
-You have created your first Business Rule using the Guided editor
+ガイド付きエディタを使用して、最初のビジネスルールを作成しました。
 <!-- // TODO Update to business central DMN editor -->
 
 ## Decision Model & Notation (DMN)
 
-Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models using Business Central DMN editor, or even third-party editors like for example Trisotech's Digital Enterprise Suite, and execute them in RHPAM. In the following image you can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
+Red Hat Process Automation Manager 7 は、Decision Model & Notation (DMN) v1.2 標準をサポートしています。これは、DMN v1.1 または v1.2 仕様で作成されたモデルを RHPAM にインポートして実行できることを意味します。Red Hat Process Automation Manager と Red Hat Decision Manager の DMN エディタを使用するだけでなく、Business Central DMN エディタを使用して DMN モデルを作成したり、Trisotech社 の Digital Enterprise Suite のようなサードパーティ製のエディタを使用して RHPAM で実行することもできます。下記の画像は、リスクを算出するルールを定義するために作成できるダイアグラムの種類の例を示しています。
 
 ![Business Central Trisotech DMN]({% image_path business-central-dmn.png %}){:width="600px"}
 
-DMN uses a business friendly language called FEEL or Friendly Enough Expression Language.
+DMNではFEEL（Friendly Enough Expression Language）と呼ばれる業務に親和性のある言語を使用しています。
 
 ![Business Central DMN FEEL]({% image_path business-central-dmn-feel.png %}){:width="800px"}
 
-For now, DMN is out of scope for this workshop. However, it is supported by RHPAM and the specification provides an additional, interesting, and standard way to model and execute decisions in your business applications.
+今のところ、DMNに関してはこのワークショップの対象外です。
+しかし、DMNはRHPAMによってサポートされており、この仕様は、ビジネスアプリケーションで意思決定をモデル化して実行するための、もう一つの標準的な方法として提供されています。
