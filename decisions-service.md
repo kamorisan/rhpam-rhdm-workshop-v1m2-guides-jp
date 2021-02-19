@@ -1,13 +1,13 @@
 
-# 5. Decision Services
+# 5. デシジョンサービス
 
-In this section you will learn:
+このセクションでは、以下のことを学習します。
 
-1. How to use the rules that you authored in the previous step;
-2. How can you expose your decisions as a service;
-3. How to use your automated decisions and rules.
+1. 前のセクションで作成したルールの使用方法
+2. デシジョンをサービスとして公開するための方法。
+3. 承認の自動化とそのルールについて
 
-In previous labs we have defined the Business Object Model and the rules and decisions that operate on the model. If you've completed the labs in the previous steps, you can use your existing project.
+これまでのラボでは、データオブジェクトのモデルと、そのモデル上で動作するルールとデシジョンを定義してきました。前のセクションでラボを完了した場合は、既存のプロジェクトを使用することができます。
 
 NOTE: _If you'd prefer to start off fresh you can delete your `ccd-project` project and re-import it using this URL: [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git)._
 
