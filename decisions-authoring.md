@@ -193,28 +193,36 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
     - Gold 500未満: low risk (Risk scoring = 0)
     - Gold 500以上: medium risk (Risk scoring = 1)
 
-    最後に、あなたのデシジョンテーブルは次のようになります。
+    最後に、デシジョンテーブルは次のようになります。
 
     ​	![Business Central Decision Complete]({% image_path business-central-decision-table-complete.png %}){:width="800px"}
 
 5. 入力が終わったら、テーブルを保存します。
 
 
-## Guided Rules
+## ガイド付きルール
 
-Guided Rules are another type of rules that you can create in Business Central. Once you have defined the Business Object Model, you can create rules that check conditions on the properties of these objects, rules that define conditions on combinations of objects, etc. For example, you can define a rule with a constraint on a Credit Card Holder's age, his/her status, riskRating, etc. If the condition or conditions are met, the rule is set to be _matched_ and becomes eligible for _firing_. When the rule fires, it executes the action defined in the rule. The action is the _THEN_ part of the rule, or what is also called the rule's consequence, or Right-Hand-Side (RHS).
+ガイド付きルールは、Business Central で作成できるもう1つのタイプのルールです。
+データオブジェクトを定義したら、そのオブジェクトのプロパティに対する条件をチェックするルールや、オブジェクトの組み合わせに対する条件を定義するルールなどを作成することができます。
+例えば、クレジットカード所有者の年齢、カード種別（ステータス）、リスク評価などに制約条件を加えたルールを定義することができます。
+条件が満たされた場合、ルールはマッチングしたとみなされ、起動の対象となります。
+ルールが起動されると、ルールで定義されたアクションが実行されます。
+アクションは、ルールの _THEN_ 部分、またはルールの結果、またはRight-Hand-Side (RHS)とも呼ばれるものです。
 
-In the previous section you have created the rules, in the form a decision table, that determine the credit risk scoring. In this section, you create the rules that determine whether the credit card dispute is eligible for automatic chargeback. You will create this rule in the form of _Guided Rule_.
+先ほど、リスク評価を決定するルールをデシジョンテーブルの形で作成しました。
+ここでは、チャージバック申請が自動処理の対象になるかどうかを決定するルールを作成します。
+このルールを _ガイド付きルール_ の形で作成します。
 
-In the case of the rules for automatic chargeback you are evaluating only the Credit Card Holder. So let's create the rule.
+チャージバック申請の自動処理のルールの場合は、クレジットカード所有者のカード種別（ステータス）のみを評価しています。
+そこで、ルールを作成してみましょう。
 
-First, tell the rule what object or collection of objects is going to be evaluated. Rules have a very basic syntax, and basically consist of 3 parts:
+まず、どのようなオブジェクトやオブジェクトの集まりが評価されるかをルールに伝えます。ルールは非常に基本的な構文を持っており、基本的には3つの部分から構成されています。
 
-- the _When_ part defines the constraints of the rule. I.e. these are the discrimination criteria or conditions which, if they are met, cause the rule to fire.
-- the _Then_ part defines the actions the rule will execute when it fires. This can be for example setting specific data on a fact (in the Business Object Model), but this can also be inserting new, inferred, data into the rules engine. For example, based on a card holder's age, you can infer that he/she is an adult.
-- the _properties_ or _attributes_ part. Here you set additional characteristics of the rule, for example the group of rules it belongs to.
+- _When_ の部分はルールの制約条件を定義します。制約条件が満たされた場合、ルールが起動されます。
+- _Then_ の部分は、ルールが起動したときに実行されるアクションを定義します。これは、例えば（データオブジェクトの）ファクトに特定のデータを設定することができますが、ルールエンジンに新しい、推測されるデータを挿入することもできます。例えば、カード保持者の年齢に基づいて、その人が成人であることを推論することができます。
+- プロパティまたは属性の部分。ここでは、ルールの追加の特性を設定します。例えば、ルールの属するグループなどです。
 
-To create the rule:
+ルールの作成:
 
 1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
 
