@@ -219,93 +219,92 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
 まず、どのようなオブジェクトやオブジェクトの集まりが評価されるかをルールに伝えます。ルールは非常に基本的な構文を持っており、基本的には3つの部分から構成されています。
 
 - _When_ の部分はルールの制約条件を定義します。制約条件が満たされた場合、ルールが起動されます。
-- _Then_ の部分は、ルールが起動したときに実行されるアクションを定義します。これは、例えば（データオブジェクトの）ファクトに特定のデータを設定することができますが、ルールエンジンに新しい、推測されるデータを挿入することもできます。例えば、カード保持者の年齢に基づいて、その人が成人であることを推論することができます。
+- _Then_ の部分は、ルールが起動したときに実行されるアクションを定義します。これは、例えば（データオブジェクトの）ファクトに特定のデータを設定することができますが、ルールエンジンに新しいデータを挿入することもできます。例えば、カード保持者の年齢に基づいて、その人が成人であることを推論することができます。
 - プロパティまたは属性の部分。ここでは、ルールの追加の特性を設定します。例えば、ルールの属するグループなどです。
 
 ルールの作成:
 
-1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
+1. 画面上部のメインメニューの下にある _ccd-project_ をクリックすると、プロジェクトのホームページに戻ります。
 
     ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="800px"}
 
-2. Click on the blue button `Add Asset` on the right upper corner of the Library View.
+2. ライブラリビューで、右上の青い `アセットの追加` ボタンをクリックします。
 
     ![Business Central CCD BOM Project]({% image_path business-central-ccd-bom-project.png %}){:width="800px"}
 
-3. In the _Add Asset_ screen, select _Decision_ from the drop-down filter menu to filter on decision assets.
+3. ドロップダウンのフィルタリングで `デシジョン` を選択し、デシジョンアセットをフィルタリングします。
 
     ![Business Central Add Assets Filter]({% image_path business-central-add-assets-filter.png %}){:width="800px"}
 
-4. Select `Guided Rule` from the filtered catalog of Wizards.
+4. フィルタリングされたカタログの中から、`ガイド付きルール` を選択します。
 
-5. Set the following data in the creation wizard:
+5. 新規作成ウィンドウで以下のデータを設定し、`OK` をクリックします。
 
-    - Name: `automated-chargeback`
-    - Package: `com.myspace.ccd_project`
+    - ガイド付きルール（Name）: `automated-chargeback`
+    - パッケージ: `com.myspace.ccd_project`
 
     ![Business Central Guided Rule New]({% image_path business-central-guided-rule-new.png %}){:width="800px"}
 
-6. Click ok. You should see a banner in green telling you that the asset was success fully created. The UI will display the editor that allows you to author your rule.
+6. アセットが作成されたことを示す緑色のバナーが表示され。ルールを作成するためのエディタが表示されます。
 
     ![Business Central Guided Rule New Wizard]({% image_path business-central-guided-rule-new-wizard.png %}){:width="800px"}
 
-7. You will see 4 tabs in the editor panel. Select the tab that says "Data Objects"
+7. エディタパネルに4つのタブが表示されます。`データオブジェクト` と書かれたタブを選択します。
 
     ![Business Central Guided Rule Import Data Object]({% image_path business-central-guided-rule-import-data-object.png %}){:width="800px"}
 
-8. You should see 4 items listed: `AdditionalInformation`, `CreditCardHolder`, `FraudData`, and `Number`. These are shown by default as the rule is created in the same folder/package as these data objects. If `CreditCardHolder` is not listed, click on the blue _New Item_ button to import it.
+8. `AdditionalInformation`, `CreditCardHolder`, `FraudData`, `Number` の4つの項目がリストアップされているはずです。ルールはこれらのデータオブジェクトと同じフォルダ/パッケージに作成されるため、デフォルトではこれらの項目が表示されます。もし `CreditCardHolder` がリストにない場合は、青い `新規アイテム` ボタンをクリックしてインポートします。
 
     ![Business Central Guided Rule Import Data Object New]({% image_path business-central-guided-rule-import-data-object-new.png %}){:width="800px"}
 
-9. Return to the _Model_ tab and Click on the green plus-sign to the right of the word _WHEN_.
+9.  `モデル` タブに戻り、_WHEN_ の右側にある緑色のプラス記号をクリックします。
 
     ![Business Central Guided Rule New Fact]({% image_path business-central-guided-rule-new-fact.png %}){:width="800px"}
 
-10. Select the object `CreditCardHolder`, and click ok. You are now telling the rule engine that every time there is a CreditCardHolder this rule needs to be activated.
+10. オブジェクト `CreditCardHolder` を選択し、`OK`をクリックします。これで、CreditCardHolderが存在するたびにこのルールを有効にする必要があることをルールエンジンに伝えることができました。
 
     ![Business Central Guided Rule New Fact Select]({% image_path business-central-guided-rule-new-fact-select.png %}){:width="800px"}
 
-    In order to match the criteria of the functional requirement, you need to add a restriction on one of the card holder's properties. Automated chargeback is only approved for CC Holders that have the `status` _Gold_ or _Platinum_.
+    業務要件の基準を満たすためには、カード所持者のプロパティに制約条件を追加する必要があります。チャージバック申請の自動処理は、`status` が _Gold_ または _Platinum_ のカード所持者のみに適用されます。
 
-11. Click on the condition `There is a Credit Card Holder`, a new wizard will open. You now _Add a restriction on a field_. From the dropdown box select the `status` field of the CC Holder.
+11. `CreditCardHolder があります。` という条件をクリックすると、新しいウィザードが開きます。これでフィールドに制約条件を追加することができます。ドロップダウンボックスからカード所持者の `status` フィールドを選択します。
 
     ![Business Central Guided Rule New Property Select]({% image_path business-central-guided-rule-new-property-select.png %}){:width="800px"}
 
-12. From the dropdown box select that the status `is contained in the (comma separated) list`. Click on the pencil icon and add the literal values  _Gold_ and _Platinum_, separated by a comma. TIP: You can also add enumerations containing these values to have them pre-populated for you. Click on the _Save_ button to save the asset.
+12. ドロップダウンボックスで、ステータス`はカンマ区切りのリストに含まれる` を選択します。鉛筆のアイコンをクリックして、固定値を選択し、 `Gold, Platinum` を追加します。`保存` ボタンをクリックして、アセットを保存します。
 
     ![Business Central Guided Rule New Property Select Values]({% image_path business-central-guided-rule-new-property-select-values.png %}){:width="800px"}
 
-13. Go back to the _Data Objects_ tab. If the `FraudData` data object has not been imported yet, complete the same procedure, to import it. Go back to the _Model_ tab and add a constraint on the `FraudData` object the same way as you did before. You don't need to put a constraint on any property of the `FraudData`. Instead, you just need to make sure that it's there.
+13. `データオブジェクト` タブに戻ります。まだ `FraudData` データオブジェクトがインポートされていない場合は、同じ手順でインポートします。`モデル` タブに戻り、先ほどと同じ方法で `FraudData` オブジェクトに制約を追加します。`FraudData` のプロパティに制約条件を加える必要はありません。代わりに、それが存在することを確認する必要があります。
 
     ![Business Central Guided Rule Check Fraud Data]({% image_path business-central-guided-rule-check-fraud-data.png %}){:width="800px"}
 
-14. When you want to modify the data in the objects of the Business Model or facts, you need to be able to reference the matched object from within the rule. To allow this, the object needs to be bound to a variable inside the rule. This makes the object accessible in both the left-hand-side (LHS) and  right-hand-side (RHS) through the variable. Click on the fact declaration `There is FraudData`, the wizard to modify the constraints will open.
+14. データオブジェクトやファクトのオブジェクト内のデータを変更したい場合、ルール内から一致したオブジェクトを参照できるようにする必要があります。これを可能にするには、オブジェクトをルール内の変数にバインドする必要があります。これにより、オブジェクトは、変数を通じて左側（LHS）と右側（RHS）の両方でアクセス可能になります。`FraudDataがあります。` をクリックすると、制約条件を変更するウィンドウが開きます。
 
-15. In the _Variable name_ field at the bottom of the form, type `data` as the name of the variable that you want to bind the `FraudData` object to. Click on the _Set_ button. Save the asset.
+15. フォームの下部にある `変数名` フィールドに、`FraudData` オブジェクトをバインドしたい変数の名前として `data` と入力します。`設定` ボタンをクリックします。その後、アセットを保存します。
 
     ![Business Central Guided Rule Modify Fraud Data]({% image_path business-central-guided-rule-modify-fraud-data.png %}){:width="800px"}
     
-      Now set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision you are making, and thus the _action_ of the rule, you define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
+      これで、`FraudData` オブジェクトにチャージバック申請自動処理のプロパティをtrueに設定します。これはルールの決定であり、ルールの _action_ なので、これをTHEN句として定義します。（ルールのRight Hand Side (RHS)またはActionセクションとしても知られています。）
     
-      All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
+      チャージバック申請の情報はすべてファクトに保存されています。これらのファクトは、エンジンがメモリに保持するセッションに保存されます。したがって、新しいファクトを評価したり、既存のファクトに何かを変更したりするたびに、セッション内のすべてのオブジェクトが意思決定のプロセスで利用できるようになります。ルールのRHS（アクション）の部分では、変数を介して参照できるオブジェクトのプロパティの値を変更したり、新しいオブジェクト/ファクトを作成してセッションに追加したりすることができます（これは通常、新しいデータや情報の推論と呼ばれています）。オブジェクトのプロパティが変更されるたびに、このプロパティが使用されているすべての決定は、他のルールを適用する必要がないことを確認するために再評価されます。
     
-16. Click on the green plus-sign next to the _THEN_ keyword.
+16. _WHEN_ の右側にある緑色のプラス記号をクリックします。
 
        ![Business Central Guided Rule New Then Condition]({% image_path business-central-guided-rule-new-then-condition.png %}){:width="800px"}
 
-17. When the `Add new action` wizard opens select `Change field values of data` and click on _OK_. This will automatically select the `FraudData` object, as this is the only object that has been bound to a variable.
+17. `新しいアクションを追加` ウィンドウが開いたら、`dataのフィールド値を変更` を選択し、`OK` をクリックします。これで自動的に `FraudData` オブジェクトが選択されます。
 
        ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="800px"}
 
-18. Now set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
+18. チャージバック申請自動処理が適用されることを示すプロパティ `automated` の値を `true` に設定していきます。アクション `FraudData[data]の値 設定` をクリックし、フィールド `automated` を選します。さらに右側の鉛筆アイコンをクリックして、`固定値` を選択します。
 
      ​	![Business Central Guided Rule Modify Fraud Automated]({% image_path business-central-guided-rule-modify-fraud-automated.png %}){:width="800px"}
 
-19. Select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is `boolean`, you can only choose between `true` and `false`.
-
+19. `automated` プロパティの値として `true` を選択します (これはbooleanのデフォルト値なので、プロパティはおそらくすでに `true` に設定されています)。データの型は `boolean` なので、`true` と `false` の間でしか選択できないことに注意してください。
      ​	![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="800px"}
 
-20. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message.
+20. すべてが正しいことを確認するには、上部のナビゲーションバーにある `検証` ボタンをクリックします。問題がなければ、`アイテムは正常に検証されました！`という緑色のメッセージが表示されます。
 
      ​	![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="800px"}
 
