@@ -99,7 +99,7 @@ Red Hat Process Automation Manager を使用すると、同じスプレッドシ
 
     ![Business Central Add Condition]({% image_path business-central-add-condition.png %}){:width="800px"}
 
-2. `新規ファクトパターンを作成`をクリックします。_ファクトタイプ_ として `CreditCardHolder` を選択し、_バインディング_ として `holder` という変数を定義します。`OK` をクリックして新規ファクトパターン作成ウィンドウを閉じ、`Next` をクリックします。
+2. `新規ファクトパターンを作成`をクリックします。_ファクトタイプ_ として `CreditCardHolder` を選択し、_バインディング_ として `holder` という変数を定義します。`OK` をクリックして新規ファクトパターン作成ウィンドウを閉じ、`次へ` をクリックします。
 
     ![Business Central Create Pattern]({% image_path business-central-create-pattern.png %}){:width="800px"}
 
