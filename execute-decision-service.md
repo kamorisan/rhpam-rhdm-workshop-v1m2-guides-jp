@@ -32,7 +32,7 @@ PAM実行サーバの RESTful API を利用することで、他のプラット�
 
     `FraudData` の `totalFraudAmount` の値が *1000.0* です。また、`CreditCardHolder` の`Status` は *Gold* です。
 
-    ```
+    ~~~
     {  
        "lookup":"ccd-ksession-stateless",
        "commands":[  
@@ -71,7 +71,7 @@ PAM実行サーバの RESTful API を利用することで、他のプラット�
           }
        ]
     }
-    ```
+    ~~~
 
 8. 上記のデータを入力したら、青い `Execute` ボタンをクリックしてリクエストを実行します。
     _ブラウザでユーザー名とパスワードを聞かれた場合は、Business Centralにログインしたときと同じユーザー名とパスワードを使用してください。_
