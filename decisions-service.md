@@ -65,7 +65,7 @@ Business Centralを使ってプロセスサーバーをチェックしてみま�
 
 1. Business Central ワークベンチのホーム画面に戻ります（左上画面の `ホーム` アイコンをクリック）。
 
-2. `デプロイ` をクリックします。これで、_サーバー設定_の画面が開きます。プロセスサーバーで有効にしている機能に注目してください。
+2. `デプロイ` をクリックします。これで、_サーバー設定_ の画面が開きます。プロセスサーバーで有効にしている機能に注目してください。
 
    ![Business Central Process Server Server Configurations]({% image_path business-central-server-configuration.png %}){:width="800px"}
 
