@@ -1,31 +1,34 @@
 Red Hat Process Automation Manager / Decision Manager Workshop Module 2
 ===
-This is `module 2` of a full-day hands-on Red Hat Process Automation Manager and Red Hat Decision Manager workshop. It provides developers and/or business analysts an introduction to Rules- and Process Driven applications and microservices in the context of modern, cloud-native, architectures.
+Red Hat Process Automation Manager と Red Hat Decision Manager の ハンズオンワークショップの `モジュール 2` です。
+このワークショップでは、開発者や業務エキスパートに、最新のクラウドネイティブアーキテクチャのコンテキストでのルールおよびプロセス駆動型アプリケーションとマイクロサービスの紹介を行います。
 
 Agenda
 ===
-* Use Case Overview
+* イントロダクション
+* ユースケースの紹介
 * Business Object Model
-* Decisions Authoring
-* Decisions as a Service
-* Testing a Decision Service
-* Executing a Decision Service
+* ビジネスルールとデシジョンの設計
+* デシジョンサービス
+* デシジョンサービスのテスト
+* デシジョンサービスの実行
+* 終わりに
 
 Run locally
 === 
 
 ```
-$ git clone https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-guides.git
-$ cd rhpam-rhdm-workshop-v1m2-guides
+$ git clone https://github.com/kamorisan/rhpam-rhdm-workshop-v1m2-guides-jp.git
+$ cd rhpam-rhdm-workshop-v1m2-guides-jp
 $ docker run -it --rm -p 8080:8080 -v $(pwd):/app-data -e CONTENT_URL_PREFIX="file:///app-data" -e WORKSHOPS_URLS="file:///app-data/_rhpam-rhdm-workshop-module2.yml" -e LOG_TO_STDOUT=true quay.io/osevg/workshopper 
 ```
 
 Lab Instructions on OpenShift
 ===
 
-Note that if you have installed the lab infra via APB, the lab instructions are already deployed.
+APB経由で labs-infra をインストールした場合、ラボインストラクションはすでにデプロイされていることに注意してください。
 
-Here is an example Ansible playbook to deploy the lab instruction to your OpenShift cluster manually.
+ここでは、ラボインストラクションを OpenShift クラスタに手動でデプロイするための Ansible プレイブックの例を示します。
 ```
 - name: Create Guides Module 2
   hosts: localhost
@@ -36,8 +39,8 @@ Here is an example Ansible playbook to deploy the lab instruction to your OpenSh
       project_name: "guide-m2"
       workshopper_name: "RHPAM / RHDM Workshop V1 Module-2"
       project_suffix: "-XX"
-      workshopper_content_url_prefix: https://raw.githubusercontent.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-guides/master
-      workshopper_workshop_urls: https://raw.githubusercontent.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-guides/master/_rhpam-rhdm-workshop-module2.yml
+      workshopper_content_url_prefix: https://raw.githubusercontent.com/kamorisan/rhpam-rhdm-workshop-v1m2-guides-jp/main
+      workshopper_workshop_urls: https://raw.githubusercontent.com/kamorisan/rhpam-rhdm-workshop-v1m2-guides-jp/main/_rhpam-rhdm-workshop-module2.yml
       workshopper_env_vars:
         PROJECT_SUFFIX: "-XX"
         COOLSTORE_PROJECT: coolstore{{ project_suffix }}
